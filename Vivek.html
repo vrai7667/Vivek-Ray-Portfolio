@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vivek Ray | B2B Growth Marketer</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#10b981', // Emerald 500 for growth vibes
+                        dark: '#0f172a', // Slate 900
+                        card: '#1e293b', // Slate 800
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            visibility: hidden;
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            will-change: opacity, visibility;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: none;
+            visibility: visible;
+        }
+        .glow:hover {
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-primary selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-dark/80 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0 font-bold text-xl tracking-tighter">
+                    VIVEK<span class="text-primary">RAY</span>.
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="hover:text-primary transition-colors px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                        <a href="#impact" class="hover:text-primary transition-colors px-3 py-2 rounded-md text-sm font-medium">Impact</a>
+                        <a href="#experience" class="hover:text-primary transition-colors px-3 py-2 rounded-md text-sm font-medium">Experience</a>
+                        <a href="#skills" class="hover:text-primary transition-colors px-3 py-2 rounded-md text-sm font-medium">Skills</a>
+                        <a href="#contact" class="bg-primary text-white hover:bg-emerald-600 px-4 py-2 rounded-full text-sm font-medium transition-colors">Let's Talk</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 md:pt-48 md:pb-32 px-4 max-w-6xl mx-auto flex flex-col justify-center min-h-screen">
+        <div class="fade-in-section">
+            <p class="text-primary font-semibold tracking-wide uppercase mb-3">Noida, India (Remote)</p>
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
+                I build scalable <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-300">growth engines.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-400 max-w-2xl mb-10 leading-relaxed">
+                Growth-focused B2B marketer specializing in technical and industrial audiences. I create content-led demand generation systems that drive organic growth and optimize paid campaigns for maximum ROI.
+            </p>
+            
+            <div class="flex flex-wrap gap-4">
+                <a href="#contact" class="bg-primary hover:bg-emerald-600 text-white font-semibold py-3 px-8 rounded-full transition-all transform hover:-translate-y-1 shadow-lg shadow-emerald-500/30">
+                    Hire Me
+                </a>
+                <a href="#impact" class="border border-slate-600 hover:border-slate-400 text-white font-semibold py-3 px-8 rounded-full transition-all">
+                    View My Impact
+                </a>
+            </div>
+
+            <!-- Social Links -->
+            <div class="mt-12 flex space-x-6 text-2xl text-slate-400">
+                <a href="#" class="hover:text-[#0077b5] transition-colors" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" class="hover:text-[#E1306C] transition-colors" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-white transition-colors" title="Threads"><i class="fa-brands fa-threads"></i></a>
+                <a href="#" class="hover:text-[#FF0000] transition-colors" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact & Achievements Section -->
+    <section id="impact" class="py-20 bg-slate-800/50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="fade-in-section mb-12 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Numbers That Matter</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">Proven track record of scaling digital presence and driving high-quality inbound leads through organic and paid strategies.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 fade-in-section">
+                <!-- Stat Card 1 -->
+                <div class="bg-card p-8 rounded-2xl border border-slate-700 glow transition-all">
+                    <div class="text-primary text-4xl mb-4"><i class="fa-brands fa-instagram"></i></div>
+                    <div class="text-4xl font-bold text-white mb-2"><span class="counter" data-target="100">0</span>K+</div>
+                    <p class="text-slate-400 font-medium">Instagram Followers</p>
+                    <p class="text-sm text-slate-500 mt-2">Grew from 500 through organic content strategy.</p>
+                </div>
+                
+                <!-- Stat Card 2 -->
+                <div class="bg-card p-8 rounded-2xl border border-slate-700 glow transition-all">
+                    <div class="text-primary text-4xl mb-4"><i class="fa-brands fa-linkedin"></i></div>
+                    <div class="text-4xl font-bold text-white mb-2"><span class="counter" data-target="33">0</span>K+</div>
+                    <p class="text-slate-400 font-medium">LinkedIn Followers</p>
+                    <p class="text-sm text-slate-500 mt-2">Scaled audience from a baseline of 2,000.</p>
+                </div>
+
+                <!-- Stat Card 3 -->
+                <div class="bg-card p-8 rounded-2xl border border-slate-700 glow transition-all">
+                    <div class="text-primary text-4xl mb-4"><i class="fa-solid fa-magnet"></i></div>
+                    <div class="text-4xl font-bold text-white mb-2"><span class="counter" data-target="2500">0</span>+</div>
+                    <p class="text-slate-400 font-medium">Monthly Inbound Leads</p>
+                    <p class="text-sm text-slate-500 mt-2">Generated consistently through organic funnels.</p>
+                </div>
+
+                <!-- Stat Card 4 -->
+                <div class="bg-card p-8 rounded-2xl border border-slate-700 glow transition-all">
+                    <div class="text-primary text-4xl mb-4"><i class="fa-solid fa-video"></i></div>
+                    <div class="text-4xl font-bold text-white mb-2"><span class="counter" data-target="1500">0</span>+</div>
+                    <p class="text-slate-400 font-medium">Webinar Leads/Month</p>
+                    <p class="text-sm text-slate-500 mt-2">100% organic, zero paid spend required.</p>
+                </div>
+
+                <!-- Stat Card 5 -->
+                <div class="bg-card p-8 rounded-2xl border border-slate-700 glow transition-all">
+                    <div class="text-primary text-4xl mb-4"><i class="fa-brands fa-threads"></i></div>
+                    <div class="text-4xl font-bold text-white mb-2"><span class="counter" data-target="7">0</span>K+</div>
+                    <p class="text-slate-400 font-medium">Threads Followers</p>
+                    <p class="text-sm text-slate-500 mt-2">Rapid growth from just 100 followers.</p>
+                </div>
+
+                <!-- Stat Card 6 -->
+                <div class="bg-card p-8 rounded-2xl border border-slate-700 glow transition-all">
+                    <div class="text-primary text-4xl mb-4"><i class="fa-brands fa-youtube"></i></div>
+                    <div class="text-4xl font-bold text-white mb-2"><span class="counter" data-target="2500">0</span>+</div>
+                    <p class="text-slate-400 font-medium">YouTube Subscribers</p>
+                    <p class="text-sm text-slate-500 mt-2">Grew channel from 100 subscribers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 fade-in-section text-center border-b border-slate-700 pb-4 inline-block">Professional Experience</h2>
+            
+            <div class="relative border-l-2 border-slate-700 pl-8 ml-4 fade-in-section">
+                <!-- Timeline Dot -->
+                <div class="absolute w-4 h-4 bg-primary rounded-full -left-[9px] top-2 shadow-[0_0_10px_rgba(16,185,129,0.8)]"></div>
+                
+                <div class="bg-card p-8 rounded-2xl border border-slate-700 hover:border-slate-500 transition-colors">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-6">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">Marketing Executive</h3>
+                            <p class="text-primary font-medium text-lg">ChemKlub India Pvt Ltd</p>
+                        </div>
+                        <div class="mt-2 md:mt-0 text-slate-400 bg-slate-800/50 px-4 py-1 rounded-full text-sm border border-slate-700">
+                            May 2023 - Present | Remote
+                        </div>
+                    </div>
+                    
+                    <ul class="space-y-4 text-slate-300">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-primary mt-1 mr-3"></i>
+                            <span>Built and scaled a multi-platform growth engine across Instagram, LinkedIn, Threads, and YouTube targeting engineers globally.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-primary mt-1 mr-3"></i>
+                            <span>Managed Google Ads and Meta Ads campaigns for lead acquisition and retargeting.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-primary mt-1 mr-3"></i>
+                            <span>Designed and executed full-funnel marketing strategy covering TOFU, MOFU, and BOFU stages.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-primary mt-1 mr-3"></i>
+                            <span>Created specialized technical content for Aspen Plus, HYSYS, and process safety topics.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-primary mt-1 mr-3"></i>
+                            <span>Optimized landing pages and conversion funnels to significantly improve lead-to-customer rates.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-slate-800/50">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 fade-in-section text-center">Core Competencies</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 fade-in-section">
+                
+                <!-- Skill Group 1 -->
+                <div class="bg-dark p-6 rounded-xl border border-slate-700">
+                    <h3 class="text-xl font-semibold mb-4 text-white flex items-center">
+                        <i class="fa-solid fa-bullseye text-primary mr-3"></i> Demand Generation
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded border border-slate-600 text-sm">Growth Marketing</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded border border-slate-600 text-sm">Lead Generation</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded border border-slate-600 text-sm">Inbound Marketing</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded border border-slate-600 text-sm">Full-Funnel Strategy</span>
+                    </div>
+                </div>
+
+                <!-- Skill Group 2 -->
+                <div class="bg-dark p-6 rounded-xl border border-slate-700">
+                    <h3 class="text-xl font-semibold mb-4 text-white flex items-center">
+                        <i class="fa-solid fa-ad text-primary mr-3"></i> Paid Advertising
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded border border-slate-600 text-sm">Google Ads</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded border border-slate-600 text-sm">Meta Ads</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded border border-slate-600 text-sm">Campaign Optimization</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded border border-slate-600 text-sm">Retargeting</span>
+                    </div>
+                </div>
+
+                <!-- Skill Group 3 -->
+                <div class="bg-dark p-6 rounded-xl border border-slate-700">
+                    <h3 class="text-xl font-semibold mb-4 text-white flex items-center">
+                        <i class="fa-solid fa-magnifying-glass-chart text-primary mr-3"></i> SEO / Content
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded border border-slate-600 text-sm">SEO / AEO</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded border border-slate-600 text-sm">Technical Content</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded border border-slate-600 text-sm">B2B Strategy</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded border border-slate-600 text-sm">Social Media Growth</span>
+                    </div>
+                </div>
+
+                <!-- Skill Group 4 -->
+                <div class="bg-dark p-6 rounded-xl border border-slate-700">
+                    <h3 class="text-xl font-semibold mb-4 text-white flex items-center">
+                        <i class="fa-solid fa-chart-line text-primary mr-3"></i> Analytics
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded border border-slate-600 text-sm">Marketing Analytics</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded border border-slate-600 text-sm">CRO</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded border border-slate-600 text-sm">Funnel Analysis</span>
+                    </div>
+                </div>
+
+                <!-- Skill Group 5 -->
+                <div class="bg-dark p-6 rounded-xl border border-slate-700 md:col-span-2 lg:col-span-2">
+                    <h3 class="text-xl font-semibold mb-4 text-white flex items-center">
+                        <i class="fa-solid fa-industry text-primary mr-3"></i> Industry Knowledge
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded border border-slate-600 text-sm">Aspen Plus</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded border border-slate-600 text-sm">HYSYS</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded border border-slate-600 text-sm">Process Safety</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded border border-slate-600 text-sm">Chemical Engineering Content</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact -->
+    <footer id="contact" class="py-12 border-t border-slate-800 text-center relative overflow-hidden">
+        <!-- Background decorative element -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-32 bg-primary/10 blur-[100px] -z-10"></div>
+        
+        <div class="max-w-4xl mx-auto px-4 fade-in-section">
+            <h2 class="text-3xl font-bold mb-6">Ready to scale your business?</h2>
+            <p class="text-slate-400 mb-8 max-w-xl mx-auto">I'm currently open for new opportunities to help B2B and technical brands build high-performing marketing funnels.</p>
+            
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-6 mb-10">
+                <a href="mailto:vrai7667@gmail.com" class="flex items-center text-lg hover:text-primary transition-colors">
+                    <i class="fa-solid fa-envelope mr-3 text-primary"></i> vrai7667@gmail.com
+                </a>
+                <a href="tel:+919971904537" class="flex items-center text-lg hover:text-primary transition-colors">
+                    <i class="fa-solid fa-phone mr-3 text-primary"></i> +91 9971904537
+                </a>
+            </div>
+
+            <div class="flex justify-center space-x-6 text-xl text-slate-500 mb-8">
+                <!-- Replace # with your actual profile links -->
+                <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-threads"></i></a>
+                <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            
+            <p class="text-slate-600 text-sm">
+                &copy; <span id="year"></span> Vivek Ray. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts for animations -->
+    <script>
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Intersection Observer for scroll animations (fade in)
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    
+                    // Trigger number counter if it has counters inside
+                    const counters = entry.target.querySelectorAll('.counter');
+                    if (counters.length > 0) {
+                        startCounters(counters);
+                    }
+                    
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-section').forEach((section) => {
+            observer.observe(section);
+        });
+
+        // Number Counter Animation function
+        function startCounters(counters) {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const duration = 2000; // 2 seconds
+                const increment = target / (duration / 16); // 60fps approx
+                
+                let current = 0;
+                const updateCounter = () => {
+                    current += increment;
+                    if (current < target) {
+                        counter.innerText = Math.ceil(current);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                updateCounter();
+            });
+        }
+    </script>
+</body>
+</html>
