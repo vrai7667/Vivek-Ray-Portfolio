@@ -672,12 +672,17 @@ footer {
     border-right: none;
     padding-right: 0;
     border-bottom: 1px solid var(--border);
-    padding-bottom: 24px;
-    margin-bottom: 24px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
     display: flex;
-    align-items: baseline;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: flex-start;
     gap: 16px;
+  }
+  
+  .number-card .number {
+    margin-bottom: 0;
+    min-width: 115px; /* Ensures all the labels start at the exact same vertical line */
   }
   
   .number-card:last-child {
