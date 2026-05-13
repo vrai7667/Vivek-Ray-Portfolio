@@ -215,39 +215,6 @@ a{
   box-shadow:0 8px 20px rgba(0,0,0,.15);
 }
 
-/* NUMBERS */
-
-.numbers{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:24px;
-  padding:65px 0;
-  border-top:1px solid var(--border);
-  border-bottom:1px solid var(--border);
-}
-
-.number-card{
-  border-right:1px solid var(--border);
-  padding-right:20px;
-}
-
-.number-card:last-child{
-  border-right:none;
-}
-
-.number{
-  font-size:clamp(32px,4vw,42px);
-  font-weight:800;
-  margin-bottom:4px;
-  letter-spacing:-0.02em;
-}
-
-.number-label{
-  color:var(--muted);
-  font-size:13px;
-  font-weight:500;
-}
-
 /* DASHBOARD */
 
 .dashboard-container{
@@ -342,10 +309,6 @@ a{
   margin-top:auto;
   padding-top:16px;
   border-top:1px solid var(--subtle);
-}
-
-.dash-link i{
-  font-size:11px;
 }
 
 .blog-action-wrapper{
@@ -532,17 +495,6 @@ footer{
 
 /* RESPONSIVE */
 
-@media(max-width:1024px){
-
-  .numbers{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .number-card:nth-child(2){
-    border-right:none;
-  }
-}
-
 @media(max-width:768px){
 
   .wrap{
@@ -601,22 +553,6 @@ footer{
 
   .btn{
     width:100%;
-  }
-
-  .numbers{
-    grid-template-columns:1fr;
-  }
-
-  .number-card{
-    border-right:none;
-    border-bottom:1px solid var(--border);
-    padding-bottom:20px;
-    margin-bottom:20px;
-  }
-
-  .number-card:last-child{
-    border-bottom:none;
-    margin-bottom:0;
   }
 
   .about-grid{
@@ -697,30 +633,6 @@ footer{
 
 </section>
 
-<section class="numbers reveal">
-
-  <div class="number-card">
-    <div class="number">2,500+</div>
-    <div class="number-label">Inbound leads / month</div>
-  </div>
-
-  <div class="number-card">
-    <div class="number">1,500+</div>
-    <div class="number-label">Webinar leads / month</div>
-  </div>
-
-  <div class="number-card">
-    <div class="number">100K+</div>
-    <div class="number-label">Instagram followers</div>
-  </div>
-
-  <div class="number-card">
-    <div class="number">33K+</div>
-    <div class="number-label">LinkedIn followers</div>
-  </div>
-
-</section>
-
 <section class="section reveal" id="results">
 
   <div class="label">ChemKlub Case Study</div>
@@ -752,7 +664,6 @@ footer{
 
           <a href="https://www.instagram.com/chemklub_india/" target="_blank" class="dash-link">
             View Instagram
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
           </a>
         </div>
 
@@ -773,7 +684,6 @@ footer{
 
           <a href="https://www.linkedin.com/company/chemklub1/?viewAsMember=true" target="_blank" class="dash-link">
             View LinkedIn
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
           </a>
         </div>
 
@@ -794,7 +704,6 @@ footer{
 
           <a href="https://www.threads.com/@chemklub_india" target="_blank" class="dash-link">
             View Threads
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
           </a>
         </div>
 
@@ -815,94 +724,10 @@ footer{
 
           <a href="https://www.youtube.com/@ChemKlub" target="_blank" class="dash-link">
             View YouTube
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
           </a>
         </div>
 
       </div>
-    </div>
-
-    <div class="dashboard-group">
-
-      <div class="dashboard-group-header">
-        <h3 class="dashboard-group-title">Content & SEO Impact</h3>
-      </div>
-
-      <div class="dash-grid">
-
-        <div class="dash-card">
-          <div class="dash-icon">
-            <i class="fa-brands fa-wordpress"></i>
-          </div>
-
-          <div class="dash-metric">WordPress</div>
-
-          <div class="dash-subtitle">
-            Technical Blog Management
-          </div>
-
-          <div class="dash-desc">
-            Created and managed SEO-focused technical blogs for ChemKlub.
-          </div>
-        </div>
-
-        <div class="dash-card">
-          <div class="dash-icon">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </div>
-
-          <div class="dash-metric">SEO / AEO</div>
-
-          <div class="dash-subtitle">
-            Search Visibility
-          </div>
-
-          <div class="dash-desc">
-            Structured technical content to rank for high-intent engineering queries.
-          </div>
-        </div>
-
-        <div class="dash-card">
-          <div class="dash-icon">
-            <i class="fa-solid fa-gears"></i>
-          </div>
-
-          <div class="dash-metric">Engineering</div>
-
-          <div class="dash-subtitle">
-            Technical Content
-          </div>
-
-          <div class="dash-desc">
-            Produced content around Aspen Plus, HYSYS, process safety, and industrial workflows.
-          </div>
-        </div>
-
-        <div class="dash-card">
-          <div class="dash-icon">
-            <i class="fa-solid fa-arrow-trend-up"></i>
-          </div>
-
-          <div class="dash-metric">Inbound</div>
-
-          <div class="dash-subtitle">
-            Organic Lead Generation
-          </div>
-
-          <div class="dash-desc">
-            Generated consistent inbound traffic and webinar registrations through content systems.
-          </div>
-        </div>
-
-      </div>
-
-      <div class="blog-action-wrapper">
-        <a href="https://chemklub.com/blog/" target="_blank" class="btn-outline">
-          <i class="fa-solid fa-book-open"></i>
-          Read the ChemKlub Blog
-        </a>
-      </div>
-
     </div>
 
   </div>
@@ -926,11 +751,7 @@ footer{
       </p>
 
       <p>
-        I also created and managed SEO-focused technical blogs for ChemKlub using WordPress — publishing engineering, Aspen Plus, process safety, and industrial training content.
-      </p>
-
-      <p>
-        My edge is combining marketing execution with domain understanding in Aspen Plus, HYSYS, process safety, and engineering workflows.
+        I also created and managed SEO-focused technical blogs for ChemKlub using WordPress.
       </p>
 
     </div>
@@ -972,7 +793,6 @@ footer{
         <li>Generated 2,500+ inbound leads monthly through organic marketing.</li>
         <li>Built webinar funnels producing 1,500+ qualified leads/month.</li>
         <li>Created technical content and WordPress blogs.</li>
-        <li>Implemented SEO/AEO strategies targeting technical search intent.</li>
       </ul>
 
     </div>
