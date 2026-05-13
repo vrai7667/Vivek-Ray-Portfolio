@@ -1,1212 +1,1097 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
 <title>Vivek Ray — B2B Growth Marketer</title>
 
-<!-- Fonts & Icons -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 
 <style>
-/* RESET & BASE */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 90px;
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:90px;
 }
 
-body {
-  font-family: 'Inter', sans-serif;
-  background: #ffffff;
-  color: #111111;
-  line-height: 1.7;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
+body{
+  font-family:'Inter',sans-serif;
+  background:#fff;
+  color:#111;
+  line-height:1.7;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
 }
 
-/* VARIABLES */
-:root {
-  --accent: #2563eb;
-  --accent-light: rgba(37, 99, 235, 0.08);
-  --accent-glow: rgba(37, 99, 235, 0.4);
-  --text: #111111;
-  --muted: #6b7280;
-  --border: #e5e7eb;
-  --subtle: #f8fafc;
-  --max: 1120px;
+:root{
+  --accent:#2563eb;
+  --accent-light:rgba(37,99,235,.08);
+  --accent-glow:rgba(37,99,235,.4);
+  --text:#111;
+  --muted:#6b7280;
+  --border:#e5e7eb;
+  --subtle:#f8fafc;
+  --max:1120px;
 }
 
-/* GLOBAL CLASSES */
-.wrap {
-  max-width: var(--max);
-  margin: auto;
-  padding: 0 24px;
+.wrap{
+  max-width:var(--max);
+  margin:auto;
+  padding:0 24px;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
+a{
+  text-decoration:none;
+  color:inherit;
 }
 
-.section {
-  padding: 90px 0;
-  border-bottom: 1px solid var(--border);
+.section{
+  padding:90px 0;
+  border-bottom:1px solid var(--border);
 }
 
-.label {
-  font-size: 12px;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: #9ca3af;
-  margin-bottom: 34px;
-  font-weight: 700;
+.label{
+  font-size:12px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:#9ca3af;
+  margin-bottom:34px;
+  font-weight:700;
 }
 
-/* NAVBAR */
-#nav {
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  background: rgba(255, 255, 255, .9);
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid transparent;
-  transition: .35s ease;
+/* NAV */
+
+#nav{
+  position:sticky;
+  top:0;
+  z-index:999;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid transparent;
+  transition:.35s ease;
 }
 
-#nav.scrolled {
-  border-color: var(--border);
-  box-shadow: 0 2px 20px rgba(0, 0, 0, .04);
+#nav.scrolled{
+  border-color:var(--border);
+  box-shadow:0 2px 20px rgba(0,0,0,.04);
 }
 
-.nav-inner {
-  height: 72px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.nav-inner{
+  height:72px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
-.logo {
-  font-size: 16px;
-  font-weight: 800;
+.logo{
+  font-size:16px;
+  font-weight:800;
 }
 
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 30px;
+.nav-links{
+  display:flex;
+  list-style:none;
+  gap:30px;
 }
 
-.nav-links a {
-  font-size: 14px;
-  color: var(--muted);
-  font-weight: 500;
-  transition: .3s ease;
+.nav-links a{
+  font-size:14px;
+  color:var(--muted);
+  font-weight:500;
+  transition:.3s ease;
 }
 
-.nav-links a:hover {
-  color: var(--text);
+.nav-links a:hover{
+  color:var(--text);
 }
 
-/* Mobile Menu Button */
-.menu-btn {
-  display: none;
-  background: transparent;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-  color: var(--text);
-  padding: 8px;
+.menu-btn{
+  display:none;
+  background:transparent;
+  border:none;
+  font-size:20px;
+  cursor:pointer;
+  color:var(--text);
+  padding:8px;
 }
 
 /* HERO */
-.hero {
-  padding: 110px 0 90px;
+
+.hero{
+  padding:110px 0 90px;
 }
 
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: #eff6ff;
-  border: 1px solid #bfdbfe;
-  color: #1d4ed8;
-  padding: 7px 14px;
-  border-radius: 999px;
-  font-size: 12px;
-  font-weight: 600;
-  margin-bottom: 22px;
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:#eff6ff;
+  border:1px solid #bfdbfe;
+  color:#1d4ed8;
+  padding:7px 14px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:600;
+  margin-bottom:22px;
 }
 
-.dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #16a34a;
-  animation: pulse 1.5s infinite;
+.dot{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#16a34a;
+  animation:pulse 1.5s infinite;
 }
 
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: .4; }
+@keyframes pulse{
+  0%,100%{opacity:1}
+  50%{opacity:.4}
 }
 
-.hero-tag {
-  display: inline-block;
-  background: var(--subtle);
-  color: var(--muted);
-  padding: 8px 14px;
-  border-radius: 10px;
-  font-size: 12px;
-  margin-bottom: 24px;
-  font-weight: 500;
+.hero-tag{
+  display:inline-block;
+  background:var(--subtle);
+  color:var(--muted);
+  padding:8px 14px;
+  border-radius:10px;
+  font-size:12px;
+  margin-bottom:24px;
+  font-weight:500;
 }
 
-.hero h1 {
-  font-size: clamp(36px, 6vw, 74px);
-  line-height: 1.05;
-  letter-spacing: -0.04em;
-  max-width: 860px;
-  margin-bottom: 24px;
+.hero h1{
+  font-size:clamp(38px,6vw,74px);
+  line-height:1.05;
+  letter-spacing:-0.04em;
+  max-width:860px;
+  margin-bottom:24px;
 }
 
-.hero h1 span {
-  color: var(--accent);
+.hero h1 span{
+  color:var(--accent);
 }
 
-.hero p {
-  max-width: 720px;
-  color: var(--muted);
-  font-size: clamp(15px, 2vw, 17px);
-  line-height: 1.9;
-  margin-bottom: 40px;
+.hero p{
+  max-width:720px;
+  color:var(--muted);
+  font-size:clamp(15px,2vw,17px);
+  line-height:1.9;
+  margin-bottom:40px;
 }
 
-/* BUTTONS */
-.hero-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
+.hero-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
 }
 
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 14px 24px;
-  border-radius: 14px;
-  font-size: 14px;
-  font-weight: 600;
-  transition: .3s ease;
-  cursor: pointer;
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:14px 24px;
+  border-radius:14px;
+  font-size:14px;
+  font-weight:600;
+  transition:.3s ease;
 }
 
-.btn-dark {
-  background: #111111;
-  color: #ffffff;
-  border: 1px solid #111111;
+.btn-dark{
+  background:#111;
+  color:#fff;
+  border:1px solid #111;
 }
 
-.btn-dark:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-.btn-light {
-  background: #ffffff;
-  border: 1px solid var(--border);
-  color: var(--text);
-}
-
-.btn-light:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+.btn-dark:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 20px rgba(0,0,0,.15);
 }
 
 /* NUMBERS */
-.numbers {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  padding: 65px 0;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+
+.numbers{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:24px;
+  padding:65px 0;
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
 }
 
-.number-card {
-  border-right: 1px solid var(--border);
-  padding-right: 20px;
+.number-card{
+  border-right:1px solid var(--border);
+  padding-right:20px;
 }
 
-.number-card:last-child {
-  border-right: none;
-  padding-right: 0;
+.number-card:last-child{
+  border-right:none;
 }
 
-.number {
-  font-size: clamp(32px, 4vw, 42px);
-  font-weight: 800;
-  margin-bottom: 4px;
-  letter-spacing: -0.02em;
+.number{
+  font-size:clamp(32px,4vw,42px);
+  font-weight:800;
+  margin-bottom:4px;
+  letter-spacing:-0.02em;
 }
 
-.number-label {
-  color: var(--muted);
-  font-size: 13px;
-  font-weight: 500;
+.number-label{
+  color:var(--muted);
+  font-size:13px;
+  font-weight:500;
+}
+
+/* DASHBOARD */
+
+.dashboard-container{
+  display:flex;
+  flex-direction:column;
+  gap:70px;
+}
+
+.dashboard-group-header{
+  margin-bottom:24px;
+}
+
+.dashboard-group-title{
+  font-size:22px;
+  font-weight:700;
+  letter-spacing:-0.01em;
+}
+
+.dash-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:24px;
+}
+
+.dash-card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:32px 28px;
+  display:flex;
+  flex-direction:column;
+  position:relative;
+  transition:all .4s cubic-bezier(.16,1,.3,1);
+  box-shadow:0 2px 10px rgba(0,0,0,.01);
+}
+
+.dash-card:hover{
+  transform:translateY(-5px);
+  border-color:var(--accent-glow);
+  box-shadow:0 14px 40px var(--accent-light);
+}
+
+.dash-icon{
+  font-size:24px;
+  color:var(--muted);
+  margin-bottom:24px;
+  background:var(--subtle);
+  width:48px;
+  height:48px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:12px;
+  border:1px solid var(--border);
+}
+
+.dash-card:hover .dash-icon{
+  color:var(--accent);
+  border-color:var(--accent-glow);
+  background:#eff6ff;
+}
+
+.dash-metric{
+  font-size:clamp(28px,3vw,34px);
+  font-weight:800;
+  letter-spacing:-0.03em;
+  margin-bottom:4px;
+  line-height:1.2;
+}
+
+.dash-subtitle{
+  font-size:15px;
+  font-weight:600;
+  margin-bottom:12px;
+}
+
+.dash-desc{
+  font-size:14px;
+  color:var(--muted);
+  line-height:1.6;
+  flex-grow:1;
+  margin-bottom:24px;
+}
+
+.dash-link{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  font-size:13px;
+  font-weight:600;
+  color:var(--accent);
+  margin-top:auto;
+  padding-top:16px;
+  border-top:1px solid var(--subtle);
+}
+
+.dash-link i{
+  font-size:11px;
+}
+
+.blog-action-wrapper{
+  margin-top:32px;
+}
+
+.btn-outline{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:12px 24px;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:12px;
+  font-size:14px;
+  font-weight:600;
+  transition:.3s ease;
+}
+
+.btn-outline:hover{
+  border-color:var(--accent);
+  color:var(--accent);
+  box-shadow:0 4px 15px var(--accent-light);
+  transform:translateY(-2px);
 }
 
 /* ABOUT */
-.about-grid {
-  display: grid;
-  grid-template-columns: 1.1fr .9fr;
-  gap: 50px;
+
+.about-grid{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:50px;
 }
 
-.about-text p {
-  color: var(--muted);
-  margin-bottom: 22px;
-  line-height: 1.95;
-  font-size: 16px;
+.about-text p{
+  color:var(--muted);
+  margin-bottom:22px;
+  line-height:1.95;
+  font-size:16px;
 }
 
-.about-cards {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+.about-cards{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
 }
 
-.about-card {
-  background: #fafafa;
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  padding: 24px;
-  transition: .3s ease;
+.about-card{
+  background:#fafafa;
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:24px;
 }
 
-.about-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+.about-card h4{
+  margin-bottom:8px;
+  font-size:16px;
 }
 
-.about-card h4 {
-  margin-bottom: 8px;
-  font-size: 16px;
-}
-
-.about-card p {
-  font-size: 14px;
-  color: var(--muted);
-}
-
-/* SERVICES */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.service {
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 30px;
-  transition: .35s ease;
-}
-
-.service:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 35px rgba(0,0,0,0.04);
-}
-
-.service i {
-  font-size: 24px;
-  color: var(--accent);
-  margin-bottom: 20px;
-}
-
-.service h4 {
-  margin-bottom: 10px;
-  font-size: 17px;
-}
-
-.service p {
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.7;
-}
-
-/* ========================================================= */
-/* DASHBOARD (RESULTS) - PREMIUM B2B SAAS STYLE              */
-/* ========================================================= */
-
-.dashboard-container {
-  display: flex;
-  flex-direction: column;
-  gap: 70px;
-}
-
-.dashboard-group {
-  display: flex;
-  flex-direction: column;
-}
-
-.dashboard-group-header {
-  margin-bottom: 24px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.dashboard-group-title {
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--text);
-  letter-spacing: -0.01em;
-}
-
-.dash-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 24px;
-}
-
-/* Premium Card Design */
-.dash-card {
-  background: #ffffff;
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 32px 28px;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.01);
-}
-
-/* Hover Elevation & Border Glow */
-.dash-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--accent-glow);
-  box-shadow: 0 14px 40px var(--accent-light);
-  z-index: 2;
-}
-
-.dash-icon {
-  font-size: 24px;
-  color: var(--muted);
-  margin-bottom: 24px;
-  transition: color 0.3s ease;
-  background: var(--subtle);
-  width: 48px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 12px;
-  border: 1px solid var(--border);
-}
-
-.dash-card:hover .dash-icon {
-  color: var(--accent);
-  border-color: var(--accent-glow);
-  background: #eff6ff;
-}
-
-.dash-metric {
-  font-size: clamp(28px, 3vw, 34px);
-  font-weight: 800;
-  color: var(--text);
-  letter-spacing: -0.03em;
-  margin-bottom: 4px;
-  line-height: 1.2;
-}
-
-.dash-subtitle {
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--text);
-  margin-bottom: 12px;
-}
-
-.dash-desc {
-  font-size: 14px;
-  color: var(--muted);
-  line-height: 1.6;
-  flex-grow: 1; 
-  margin-bottom: 24px;
-}
-
-.dash-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--accent);
-  transition: all 0.2s ease;
-  margin-top: auto;
-  padding-top: 16px;
-  border-top: 1px solid var(--subtle);
-}
-
-.dash-link i {
-  font-size: 11px;
-  transition: transform 0.2s ease;
-}
-
-.dash-link:hover {
-  color: #1d4ed8;
-  gap: 8px;
-}
-
-.dash-link:hover i {
-  transform: translateX(3px) translateY(-3px);
-}
-
-.blog-action-wrapper {
-  margin-top: 32px;
-}
-
-.btn-outline {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 24px;
-  background: #ffffff;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--text);
-  transition: all 0.3s ease;
-}
-
-.btn-outline:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  box-shadow: 0 4px 15px var(--accent-light);
-  transform: translateY(-2px);
+.about-card p{
+  font-size:14px;
+  color:var(--muted);
 }
 
 /* EXPERIENCE */
-.timeline {
-  border-left: 2px solid var(--border);
-  padding-left: 34px;
-  margin-left: 8px; 
+
+.timeline{
+  border-left:2px solid var(--border);
+  padding-left:34px;
+  margin-left:8px;
 }
 
-.timeline-item {
-  position: relative;
+.timeline-item{
+  position:relative;
 }
 
-.timeline-item::before {
-  content: '';
-  position: absolute;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: var(--accent);
-  left: -42px;
-  top: 4px;
-  box-shadow: 0 0 0 4px #eff6ff;
+.timeline-item::before{
+  content:'';
+  position:absolute;
+  width:14px;
+  height:14px;
+  border-radius:50%;
+  background:var(--accent);
+  left:-42px;
+  top:4px;
+  box-shadow:0 0 0 4px #eff6ff;
 }
 
-.timeline small {
-  display: block;
-  color: #9ca3af;
-  margin-bottom: 8px;
-  font-weight: 600;
-  font-size: 12px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+.timeline small{
+  display:block;
+  color:#9ca3af;
+  margin-bottom:8px;
+  font-weight:600;
+  font-size:12px;
+  letter-spacing:.05em;
+  text-transform:uppercase;
 }
 
-.timeline h3 {
-  margin-bottom: 4px;
-  font-size: 20px;
+.timeline h3{
+  margin-bottom:4px;
+  font-size:20px;
 }
 
-.timeline p {
-  color: var(--muted);
-  margin-bottom: 16px;
-  font-weight: 500;
+.timeline p{
+  color:var(--muted);
+  margin-bottom:16px;
+  font-weight:500;
 }
 
-.timeline ul {
-  padding-left: 20px;
+.timeline ul{
+  padding-left:20px;
 }
 
-.timeline li {
-  margin-bottom: 12px;
-  color: #4b5563;
-  line-height: 1.6;
+.timeline li{
+  margin-bottom:12px;
+  color:#4b5563;
+  line-height:1.6;
 }
 
 /* CONTACT */
-.contact-box {
-  background: #111111;
-  color: #ffffff;
-  border-radius: 26px;
-  padding: 60px 50px;
-  text-align: center;
+
+.contact-box{
+  background:#111;
+  color:#fff;
+  border-radius:26px;
+  padding:60px 50px;
+  text-align:center;
 }
 
-.contact-box h2 {
-  font-size: clamp(28px, 4vw, 42px);
-  margin-bottom: 16px;
-  letter-spacing: -0.02em;
+.contact-box h2{
+  font-size:clamp(28px,4vw,42px);
+  margin-bottom:16px;
+  letter-spacing:-0.02em;
 }
 
-.contact-box p {
-  color: rgba(255, 255, 255, .7);
-  margin-bottom: 34px;
-  font-size: 16px;
+.contact-box p{
+  color:rgba(255,255,255,.7);
+  margin-bottom:34px;
+  font-size:16px;
 }
 
-.contact-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  justify-content: center;
+.contact-links{
+  display:flex;
+  justify-content:center;
+  gap:16px;
+  flex-wrap:wrap;
 }
 
-.contact-links a {
-  background: rgba(255, 255, 255, .1);
-  padding: 16px 24px;
-  border-radius: 14px;
-  transition: .3s ease;
-  font-weight: 600;
-  border: 1px solid transparent;
+.contact-links a{
+  background:rgba(255,255,255,.1);
+  padding:16px 24px;
+  border-radius:14px;
+  transition:.3s ease;
+  font-weight:600;
 }
 
-.contact-links a:hover {
-  transform: translateY(-3px);
-  background: rgba(255, 255, 255, .15);
-  border-color: rgba(255, 255, 255, .2);
+.contact-links a:hover{
+  transform:translateY(-3px);
+  background:rgba(255,255,255,.15);
 }
 
 /* FOOTER */
-footer {
-  padding: 36px 0 54px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 14px;
-  color: #9ca3af;
-  font-size: 13px;
-  font-weight: 500;
+
+footer{
+  padding:36px 0 54px;
+  text-align:center;
+  color:#9ca3af;
+  font-size:13px;
+  font-weight:500;
 }
 
-/* REVEAL ANIMATION */
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: 1s cubic-bezier(.22, 1, .36, 1);
+/* REVEAL */
+
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:1s cubic-bezier(.22,1,.36,1);
 }
 
-.reveal.active {
-  opacity: 1;
-  transform: none;
+.reveal.active{
+  opacity:1;
+  transform:none;
 }
 
-/* ========================================= */
-/* RESPONSIVE DESIGN                         */
-/* ========================================= */
+/* RESPONSIVE */
 
-@media(max-width: 1024px) {
-  .services-grid {
-    grid-template-columns: repeat(2, 1fr); 
+@media(max-width:1024px){
+
+  .numbers{
+    grid-template-columns:repeat(2,1fr);
   }
 
-  .numbers {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px 24px;
-  }
-  
-  .number-card:nth-child(2) {
-    border-right: none;
-    padding-right: 0;
-  }
-  
-  .about-grid {
-    gap: 30px;
+  .number-card:nth-child(2){
+    border-right:none;
   }
 }
 
-@media(max-width: 768px) {
-  .wrap {
-    padding: 0 20px;
-  }
-  
-  .section {
-    padding: 70px 0;
+@media(max-width:768px){
+
+  .wrap{
+    padding:0 20px;
   }
 
-  .menu-btn {
-    display: block;
+  .section{
+    padding:70px 0;
   }
 
-  .nav-links {
-    position: absolute;
-    top: 72px;
-    left: 0;
-    width: 100%;
-    background: #ffffff;
-    flex-direction: column;
-    gap: 0;
-    padding: 0;
-    border-bottom: 1px solid var(--border);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-10px);
-    transition: all 0.3s ease;
+  .menu-btn{
+    display:block;
   }
 
-  .nav-links.active {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+  .nav-links{
+    position:absolute;
+    top:72px;
+    left:0;
+    width:100%;
+    background:#fff;
+    flex-direction:column;
+    gap:0;
+    border-bottom:1px solid var(--border);
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(-10px);
+    transition:.3s ease;
   }
 
-  .nav-links li {
-    border-top: 1px solid var(--subtle);
+  .nav-links.active{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
   }
 
-  .nav-links a {
-    display: block;
-    padding: 18px 24px;
-    font-size: 15px;
+  .nav-links li{
+    border-top:1px solid var(--subtle);
   }
 
-  .hero {
-    padding: 60px 0 50px;
+  .nav-links a{
+    display:block;
+    padding:18px 24px;
   }
 
-  .hero h1 {
-    font-size: 40px;
+  .hero{
+    padding:60px 0 50px;
   }
 
-  .hero-buttons {
-    flex-direction: column;
+  .hero h1{
+    font-size:42px;
   }
 
-  .btn {
-    width: 100%;
+  .hero-buttons{
+    flex-direction:column;
   }
 
-  .about-grid,
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .dashboard-container {
-    gap: 54px;
+  .btn{
+    width:100%;
   }
 
-  .dash-grid {
-    grid-template-columns: 1fr;
+  .numbers{
+    grid-template-columns:1fr;
   }
 
-  .about-grid {
-    gap: 40px;
+  .number-card{
+    border-right:none;
+    border-bottom:1px solid var(--border);
+    padding-bottom:20px;
+    margin-bottom:20px;
   }
 
-  .contact-box {
-    padding: 40px 20px;
+  .number-card:last-child{
+    border-bottom:none;
+    margin-bottom:0;
   }
 
-  .contact-links {
-    flex-direction: column;
+  .about-grid{
+    grid-template-columns:1fr;
+    gap:40px;
   }
 
-  .contact-links a {
-    width: 100%;
+  .dash-grid{
+    grid-template-columns:1fr;
   }
 
-  footer {
-    flex-direction: column;
-    text-align: center;
-    padding-bottom: 40px;
+  .contact-box{
+    padding:40px 20px;
+  }
+
+  .contact-links{
+    flex-direction:column;
+  }
+
+  .contact-links a{
+    width:100%;
   }
 }
 
-@media(max-width: 480px) {
-  .hero h1 {
-    font-size: 34px;
-  }
-
-  .numbers {
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
-
-  .number-card {
-    border-right: none;
-    padding-right: 0;
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 16px;
-  }
-  
-  .number-card .number {
-    margin-bottom: 0;
-    min-width: 115px;
-  }
-  
-  .number-card:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-    margin-bottom: 0;
-  }
-
-  .timeline {
-    margin-left: 0;
-  }
-}
 </style>
 </head>
+
 <body>
 
 <nav id="nav">
   <div class="wrap">
     <div class="nav-inner">
+
       <a href="#" class="logo">Vivek Ray</a>
-      
-      <button id="menu-btn" class="menu-btn" aria-label="Toggle Navigation">
+
+      <button id="menu-btn" class="menu-btn">
         <i class="fa-solid fa-bars"></i>
       </button>
 
       <ul class="nav-links" id="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
         <li><a href="#results">Results</a></li>
+        <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+
     </div>
   </div>
 </nav>
 
 <div class="wrap">
-  <!-- HERO -->
-  <section class="hero">
-    <div class="badge">
-      <span class="dot"></span>
-      Available for opportunities
-    </div>
 
-    <div class="hero-tag">
-      Open for Remote / Hybrid / Office Roles
-    </div>
+<!-- HERO -->
 
-    <h1>
-      Building organic growth for
-      <span>technical audiences.</span>
-    </h1>
+<section class="hero">
 
-    <p>
-      I help engineering and industrial B2B brands grow through content-led demand generation, SEO/AEO, webinar funnels, and organic growth systems that generate real inbound pipeline.
-    </p>
+  <div class="badge">
+    <span class="dot"></span>
+    Available for opportunities
+  </div>
 
-    <div class="hero-buttons">
-      <a href="mailto:vrai7667@gmail.com" class="btn btn-dark">
-        Get in touch →
-      </a>
-      <a href="tel:9971904537" class="btn btn-light">
-        Call Me
-      </a>
-    </div>
-  </section>
+  <div class="hero-tag">
+    Open for Remote / Hybrid / Office Roles
+  </div>
 
-  <!-- NUMBERS -->
-  <section class="numbers reveal">
-    <div class="number-card">
-      <div class="number">2,500+</div>
-      <div class="number-label">Inbound leads / month</div>
-    </div>
-    <div class="number-card">
-      <div class="number">1,500+</div>
-      <div class="number-label">Webinar leads / month</div>
-    </div>
-    <div class="number-card">
-      <div class="number">100K+</div>
-      <div class="number-label">Instagram followers</div>
-    </div>
-    <div class="number-card">
-      <div class="number">33K+</div>
-      <div class="number-label">LinkedIn followers</div>
-    </div>
-  </section>
+  <h1>
+    Building organic growth for
+    <span>technical audiences.</span>
+  </h1>
 
-  <!-- ABOUT -->
-  <section class="section reveal" id="about">
-    <div class="label">About Me</div>
-    <div class="about-grid">
-      <div class="about-text">
-        <p>
-          I'm a growth-focused B2B marketer specialising in technical and industrial audiences — especially engineers, process safety professionals, and chemical engineering communities.
-        </p>
-        <p>
-          Over 3 years at ChemKlub India, I built complete demand generation systems across LinkedIn, Instagram, Threads, webinars, SEO, and technical content marketing.
-        </p>
-        <p>
-          I also created and managed SEO-focused technical blogs for ChemKlub using WordPress — publishing engineering, Aspen Plus, process safety, and industrial training content to drive organic traffic and inbound leads.
-        </p>
-        <p>
-          My edge is combining marketing execution with domain understanding in Aspen Plus, HYSYS, process safety, and engineering workflows — creating content technical audiences genuinely trust.
-        </p>
+  <p>
+    I help engineering and industrial B2B brands grow through content-led demand generation, SEO/AEO, webinar funnels, and organic growth systems that generate real inbound pipeline.
+  </p>
+
+  <div class="hero-buttons">
+    <a href="mailto:vrai7667@gmail.com" class="btn btn-dark">
+      Get in touch →
+    </a>
+  </div>
+
+</section>
+
+<!-- NUMBERS -->
+
+<section class="numbers reveal">
+
+  <div class="number-card">
+    <div class="number">2,500+</div>
+    <div class="number-label">Inbound leads / month</div>
+  </div>
+
+  <div class="number-card">
+    <div class="number">1,500+</div>
+    <div class="number-label">Webinar leads / month</div>
+  </div>
+
+  <div class="number-card">
+    <div class="number">100K+</div>
+    <div class="number-label">Instagram followers</div>
+  </div>
+
+  <div class="number-card">
+    <div class="number">33K+</div>
+    <div class="number-label">LinkedIn followers</div>
+  </div>
+
+</section>
+
+<!-- RESULTS -->
+
+<section class="section reveal" id="results">
+
+  <div class="label">ChemKlub Case Study</div>
+
+  <div class="dashboard-container">
+
+    <div class="dashboard-group">
+
+      <div class="dashboard-group-header">
+        <h3 class="dashboard-group-title">Growth Metrics</h3>
       </div>
 
-      <div class="about-cards">
-        <div class="about-card">
-          <h4>Niche Specialist</h4>
-          <p>Engineering and industrial B2B marketing focused on technical buyers.</p>
-        </div>
-        <div class="about-card">
-          <h4>Organic Growth</h4>
-          <p>Built scalable inbound systems generating consistent monthly leads.</p>
-        </div>
-        <div class="about-card">
-          <h4>Global Audience</h4>
-          <p>Grew technical communities across 50+ countries remotely.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+      <div class="dash-grid">
 
-  <!-- SERVICES -->
-  <section class="section reveal" id="services">
-    <div class="label">What I Do</div>
-    <div class="services-grid">
-      <div class="service">
-        <i class="fa-solid fa-bullseye"></i>
-        <h4>Demand Generation</h4>
-        <p>Organic and paid funnel systems designed for technical B2B growth.</p>
-      </div>
-      <div class="service">
-        <i class="fa-solid fa-pen"></i>
-        <h4>Technical Content</h4>
-        <p>Engineering-focused content built for trust and conversion.</p>
-      </div>
-      <div class="service">
-        <i class="fa-brands fa-wordpress"></i>
-        <h4>WordPress Blog Management</h4>
-        <p>Created and managed SEO-focused technical blogs for ChemKlub using WordPress.</p>
-      </div>
-      <div class="service">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <h4>SEO / AEO</h4>
-        <p>High-intent search visibility for technical and industrial queries.</p>
-      </div>
-      <div class="service">
-        <i class="fa-solid fa-chart-line"></i>
-        <h4>Social Media Growth</h4>
-        <p>Platform-specific growth strategy for B2B brands.</p>
-      </div>
-      <div class="service">
-        <i class="fa-solid fa-video"></i>
-        <h4>Webinar Funnels</h4>
-        <p>End-to-end webinar campaigns generating qualified inbound leads.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- DASHBOARD / CASE STUDY -->
-  <section class="section reveal" id="results">
-    <div class="label">ChemKlub Case Study</div>
-    
-    <div class="dashboard-container">
-
-      <!-- 1. SOCIAL MEDIA GROWTH -->
-      <div class="dashboard-group">
-        <div class="dashboard-group-header">
-          <h3 class="dashboard-group-title">Growth Metrics</h3>
-        </div>
-        <div class="dash-grid">
-          
-          <div class="dash-card">
-            <div class="dash-icon"><i class="fa-brands fa-instagram"></i></div>
-            <div class="dash-metric">500 → 100K+</div>
-            <div class="dash-subtitle">Instagram Followers</div>
-            <div class="dash-desc">Scaled technical community completely organically to active engineering professionals globally.</div>
-            <a href="https://www.instagram.com/chemklub_india/" target="_blank" rel="noopener noreferrer" class="dash-link">View Instagram <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        <div class="dash-card">
+          <div class="dash-icon">
+            <i class="fa-brands fa-instagram"></i>
           </div>
 
-          <div class="dash-card">
-            <div class="dash-icon"><i class="fa-brands fa-linkedin"></i></div>
-            <div class="dash-metric">2K → 33K+</div>
-            <div class="dash-subtitle">LinkedIn Followers</div>
-            <div class="dash-desc">Grew premium B2B audience generating high-intent technical inquiries and professional leads.</div>
-            <a href="https://www.linkedin.com/company/chemklub1/?viewAsMember=true" target="_blank" rel="noopener noreferrer" class="dash-link">View LinkedIn <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          <div class="dash-metric">500 → 100K+</div>
+
+          <div class="dash-subtitle">
+            Instagram Followers
           </div>
 
-          <div class="dash-card">
-            <div class="dash-icon"><i class="fa-brands fa-threads"></i></div>
-            <div class="dash-metric">100 → 7K+</div>
-            <div class="dash-subtitle">Threads Followers</div>
-            <div class="dash-desc">Capitalized on early platform adoption to secure a loyal text-based technical community.</div>
-            <a href="https://www.threads.com/@chemklub_india" target="_blank" rel="noopener noreferrer" class="dash-link">View Threads <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          <div class="dash-desc">
+            Scaled technical community organically to engineering professionals globally.
           </div>
 
-          <div class="dash-card">
-            <div class="dash-icon"><i class="fa-brands fa-youtube"></i></div>
-            <div class="dash-metric">100 → 2.5K+</div>
-            <div class="dash-subtitle">YouTube Subscribers</div>
-            <div class="dash-desc">Built an ever-green library of technical video content driving steady subscriber growth.</div>
-            <a href="https://www.youtube.com/@ChemKlub" target="_blank" rel="noopener noreferrer" class="dash-link">View YouTube <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- 2. META ADS PERFORMANCE -->
-      <div class="dashboard-group">
-        <div class="dashboard-group-header">
-          <h3 class="dashboard-group-title">Campaign Performance</h3>
-        </div>
-        <div class="dash-grid">
-
-          <div class="dash-card">
-            <div class="dash-icon"><i class="fa-solid fa-wallet"></i></div>
-            <div class="dash-metric">₹50K+</div>
-            <div class="dash-subtitle">Ad Spend Managed</div>
-            <div class="dash-desc">Strategically optimized Meta Ads budget focused strictly on B2B engineering lead generation.</div>
-          </div>
-
-          <div class="dash-card">
-            <div class="dash-icon"><i class="fa-solid fa-filter"></i></div>
-            <div class="dash-metric">Webinar</div>
-            <div class="dash-subtitle">Campaign Funnels</div>
-            <div class="dash-desc">Built end-to-end ad funnels driving high-quality technical registrations at scale.</div>
-          </div>
-
-          <div class="dash-card">
-            <div class="dash-icon"><i class="fa-solid fa-users-viewfinder"></i></div>
-            <div class="dash-metric">Lead Gen</div>
-            <div class="dash-subtitle">Targeted Campaigns</div>
-            <div class="dash-desc">Executed complex audience targeting to reach highly niche chemical and process engineers.</div>
-          </div>
-
-          <div class="dash-card">
-            <div class="dash-icon"><i class="fa-solid fa-chart-line"></i></div>
-            <div class="dash-metric">CPL Drop</div>
-            <div class="dash-subtitle">Cost Optimization</div>
-            <div class="dash-desc">Continuously A/B tested ad creatives and sales copy to achieve cost-efficient acquisition.</div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- 3. WEBINAR & INBOUND LEADS -->
-      <div class="dashboard-group">
-        <div class="dashboard-group-header">
-          <h3 class="dashboard-group-title">Organic Lead Generation</h3>
-        </div>
-        
-        <!-- Nested Grid for Webinars -->
-        <h4 class="label" style="margin-bottom: 20px;">Webinar Operations</h4>
-        <div class="dash-grid" style="margin-bottom: 40px;">
-          <div class="dash-card">
-            <div class="dash-icon"><i class="fa-solid fa-diagram-project"></i></div>
-            <div class="dash-metric">Execution</div>
-            <div class="dash-subtitle">Funnel Campaigns</div>
-            <div class="dash-desc">Mapped and executed the entire webinar journey from top-of-funnel awareness to live attendance.</div>
-          </div>
-
-          <div class="dash-card">
-            <div class="dash-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
-            <div class="dash-metric">Automation</div>
-            <div class="dash-subtitle">Email Marketing</div>
-            <div class="dash-desc">Deployed automated nurture sequences to improve show-up rates and convert attendees into buyers.</div>
-          </div>
-        </div>
-
-        <!-- Nested Grid for Inbound -->
-        <h4 class="label" style="margin-bottom: 20px;">Inbound Lead Channels</h4>
-        <div class="dash-grid">
-          <div class="dash-card">
-            <div class="dash-icon"><i class="fa-brands fa-linkedin-in"></i></div>
-            <div class="dash-metric">LinkedIn</div>
-            <div class="dash-subtitle">Inbound Leads</div>
-            <div class="dash-desc">Turned company pages into a consistent B2B inbound engine through thought leadership.</div>
-          </div>
-
-          <div class="dash-card">
-            <div class="dash-icon"><i class="fa-brands fa-instagram"></i></div>
-            <div class="dash-metric">Instagram</div>
-            <div class="dash-subtitle">Inbound Leads</div>
-            <div class="dash-desc">Leveraged targeted Reels and carousels to drive immense top-of-funnel DM inquiries.</div>
-          </div>
-
-          <div class="dash-card">
-            <div class="dash-icon"><i class="fa-brands fa-google"></i></div>
-            <div class="dash-metric">Search</div>
-            <div class="dash-subtitle">SEO-Generated Leads</div>
-            <div class="dash-desc">Captured high-intent bottom-funnel traffic solving specific engineering search queries.</div>
-          </div>
-
-          <div class="dash-card">
-            <div class="dash-icon"><i class="fa-solid fa-at"></i></div>
-            <div class="dash-metric">Direct</div>
-            <div class="dash-subtitle">Email Marketing Leads</div>
-            <div class="dash-desc">Re-engaged and converted long-term newsletter subscribers into active business prospects.</div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- 4. CONTENT & SEO IMPACT -->
-      <div class="dashboard-group">
-        <div class="dashboard-group-header">
-          <h3 class="dashboard-group-title">Content & SEO Impact</h3>
-        </div>
-        <div class="dash-grid">
-
-          <div class="dash-card">
-            <div class="dash-icon"><i class="fa-brands fa-wordpress"></i></div>
-            <div class="dash-metric">Platform</div>
-            <div class="dash-subtitle">WordPress Management</div>
-            <div class="dash-desc">Built, structured, and managed the technical architecture of the main company blog.</div>
-          </div>
-
-          <div class="dash-card">
-            <div class="dash-icon"><i class="fa-solid fa-laptop-code"></i></div>
-            <div class="dash-metric">Strategy</div>
-            <div class="dash-subtitle">Technical SEO Blogs</div>
-            <div class="dash-desc">Researched low-competition technical keywords and structured content for ranking visibility.</div>
-          </div>
-
-          <div class="dash-card">
-            <div class="dash-icon"><i class="fa-solid fa-gears"></i></div>
-            <div class="dash-metric">Authority</div>
-            <div class="dash-subtitle">Engineering Content</div>
-            <div class="dash-desc">Authored highly specific deep-dive guides on Aspen Plus, HYSYS, and process safety.</div>
-          </div>
-
-          <div class="dash-card">
-            <div class="dash-icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
-            <div class="dash-metric">Acquisition</div>
-            <div class="dash-subtitle">Organic Traffic Gen.</div>
-            <div class="dash-desc">Significantly increased monthly site visitors through compounded search engine returns.</div>
-          </div>
-
-        </div>
-        
-        <div class="blog-action-wrapper">
-          <a href="https://chemklub.com/blog/" target="_blank" rel="noopener noreferrer" class="btn-outline">
-            <i class="fa-solid fa-book-open"></i> Read the ChemKlub Blog
+          <a href="https://www.instagram.com/chemklub_india/" target="_blank" class="dash-link">
+            View Instagram
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
           </a>
         </div>
+
+        <div class="dash-card">
+          <div class="dash-icon">
+            <i class="fa-brands fa-linkedin"></i>
+          </div>
+
+          <div class="dash-metric">2K → 33K+</div>
+
+          <div class="dash-subtitle">
+            LinkedIn Followers
+          </div>
+
+          <div class="dash-desc">
+            Built a premium B2B engineering audience generating high-intent inbound leads.
+          </div>
+
+          <a href="https://www.linkedin.com/company/chemklub1/?viewAsMember=true" target="_blank" class="dash-link">
+            View LinkedIn
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+
+        <div class="dash-card">
+          <div class="dash-icon">
+            <i class="fa-brands fa-threads"></i>
+          </div>
+
+          <div class="dash-metric">100 → 7K+</div>
+
+          <div class="dash-subtitle">
+            Threads Followers
+          </div>
+
+          <div class="dash-desc">
+            Grew an early-stage technical audience through high-frequency content strategy.
+          </div>
+
+          <a href="https://www.threads.com/@chemklub_india" target="_blank" class="dash-link">
+            View Threads
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+
+        <div class="dash-card">
+          <div class="dash-icon">
+            <i class="fa-brands fa-youtube"></i>
+          </div>
+
+          <div class="dash-metric">100 → 2.5K+</div>
+
+          <div class="dash-subtitle">
+            YouTube Subscribers
+          </div>
+
+          <div class="dash-desc">
+            Built evergreen technical video content focused on engineers and industrial learners.
+          </div>
+
+          <a href="https://www.youtube.com/@ChemKlub" target="_blank" class="dash-link">
+            View YouTube
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="dashboard-group">
+
+      <div class="dashboard-group-header">
+        <h3 class="dashboard-group-title">Content & SEO Impact</h3>
+      </div>
+
+      <div class="dash-grid">
+
+        <div class="dash-card">
+          <div class="dash-icon">
+            <i class="fa-brands fa-wordpress"></i>
+          </div>
+
+          <div class="dash-metric">WordPress</div>
+
+          <div class="dash-subtitle">
+            Technical Blog Management
+          </div>
+
+          <div class="dash-desc">
+            Created and managed SEO-focused technical blogs for ChemKlub.
+          </div>
+        </div>
+
+        <div class="dash-card">
+          <div class="dash-icon">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+
+          <div class="dash-metric">SEO / AEO</div>
+
+          <div class="dash-subtitle">
+            Search Visibility
+          </div>
+
+          <div class="dash-desc">
+            Structured technical content to rank for high-intent engineering queries.
+          </div>
+        </div>
+
+        <div class="dash-card">
+          <div class="dash-icon">
+            <i class="fa-solid fa-gears"></i>
+          </div>
+
+          <div class="dash-metric">Engineering</div>
+
+          <div class="dash-subtitle">
+            Technical Content
+          </div>
+
+          <div class="dash-desc">
+            Produced content around Aspen Plus, HYSYS, process safety, and industrial workflows.
+          </div>
+        </div>
+
+        <div class="dash-card">
+          <div class="dash-icon">
+            <i class="fa-solid fa-arrow-trend-up"></i>
+          </div>
+
+          <div class="dash-metric">Inbound</div>
+
+          <div class="dash-subtitle">
+            Organic Lead Generation
+          </div>
+
+          <div class="dash-desc">
+            Generated consistent inbound traffic and webinar registrations through content systems.
+          </div>
+        </div>
+
+      </div>
+
+      <div class="blog-action-wrapper">
+        <a href="https://chemklub.com/blog/" target="_blank" class="btn-outline">
+          <i class="fa-solid fa-book-open"></i>
+          Read the ChemKlub Blog
+        </a>
       </div>
 
     </div>
-  </section>
 
-  <!-- EXPERIENCE -->
-  <section class="section reveal" id="experience">
-    <div class="label">Experience</div>
-    <div class="timeline">
-      <div class="timeline-item">
-        <small>May 2023 — Present</small>
-        <h3>Marketing Executive</h3>
-        <p>ChemKlub India Pvt Ltd · Remote</p>
-        <ul>
-          <li>Built multi-platform organic growth systems targeting engineering audiences globally.</li>
-          <li>Generated 2,500+ inbound leads monthly through organic marketing.</li>
-          <li>Built webinar funnels producing 1,500+ qualified leads/month.</li>
-          <li>Managed Google Ads and Meta Ads campaigns.</li>
-          <li>Created technical content and WordPress blogs.</li>
-          <li>Implemented SEO/AEO strategies targeting technical search intent.</li>
-        </ul>
-      </div>
+  </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="section reveal" id="about">
+
+  <div class="label">About Me</div>
+
+  <div class="about-grid">
+
+    <div class="about-text">
+
+      <p>
+        I'm a growth-focused B2B marketer specialising in technical and industrial audiences — especially engineers, process safety professionals, and chemical engineering communities.
+      </p>
+
+      <p>
+        Over 3 years at ChemKlub India, I built complete demand generation systems across LinkedIn, Instagram, webinars, SEO, and technical content marketing.
+      </p>
+
+      <p>
+        I also created and managed SEO-focused technical blogs for ChemKlub using WordPress — publishing engineering, Aspen Plus, process safety, and industrial training content.
+      </p>
+
+      <p>
+        My edge is combining marketing execution with domain understanding in Aspen Plus, HYSYS, process safety, and engineering workflows.
+      </p>
+
     </div>
-  </section>
 
-  <!-- CONTACT -->
-  <section class="section reveal" id="contact">
-    <div class="contact-box">
-      <h2>Let’s build something together.</h2>
-      <p>Open for Remote / Hybrid / Office Roles, consulting, and collaborations.</p>
-      <div class="contact-links">
-        <a href="mailto:vrai7667@gmail.com">✉ Email Me</a>
-        <a href="tel:9971904537">📞 Call Me</a>
+    <div class="about-cards">
+
+      <div class="about-card">
+        <h4>Niche Specialist</h4>
+        <p>Engineering and industrial B2B marketing focused on technical buyers.</p>
       </div>
-    </div>
-  </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <span>© 2026 Vivek Ray</span>
-    <span>Open for Remote / Hybrid / Office Roles</span>
-  </footer>
+      <div class="about-card">
+        <h4>Organic Growth</h4>
+        <p>Built scalable inbound systems generating consistent monthly leads.</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- EXPERIENCE -->
+
+<section class="section reveal" id="experience">
+
+  <div class="label">Experience</div>
+
+  <div class="timeline">
+
+    <div class="timeline-item">
+
+      <small>May 2023 — Present</small>
+
+      <h3>Marketing Executive</h3>
+
+      <p>ChemKlub India Pvt Ltd · Remote</p>
+
+      <ul>
+        <li>Built multi-platform organic growth systems targeting engineering audiences globally.</li>
+        <li>Generated 2,500+ inbound leads monthly through organic marketing.</li>
+        <li>Built webinar funnels producing 1,500+ qualified leads/month.</li>
+        <li>Created technical content and WordPress blogs.</li>
+        <li>Implemented SEO/AEO strategies targeting technical search intent.</li>
+      </ul>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="section reveal" id="contact">
+
+  <div class="contact-box">
+
+    <h2>Let’s build something together.</h2>
+
+    <p>
+      Open for opportunities, consulting, and collaborations.
+    </p>
+
+    <div class="contact-links">
+
+      <a href="mailto:vrai7667@gmail.com">
+        Email Me
+      </a>
+
+      <a href="https://www.linkedin.com/" target="_blank">
+        LinkedIn
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<footer>
+  <span>© 2026 Vivek Ray</span>
+</footer>
 
 </div>
 
 <script>
-// Scroll Navbar Logic
+
 const nav = document.getElementById('nav');
+
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 10) {
+  if(window.scrollY > 10){
     nav.classList.add('scrolled');
   } else {
     nav.classList.remove('scrolled');
   }
 });
 
-// Mobile Menu Toggle Logic
 const menuBtn = document.getElementById('menu-btn');
 const navLinks = document.getElementById('nav-links');
 const navItems = navLinks.querySelectorAll('a');
 
 menuBtn.addEventListener('click', () => {
+
   navLinks.classList.toggle('active');
+
   const icon = menuBtn.querySelector('i');
-  if(navLinks.classList.contains('active')) {
+
+  if(navLinks.classList.contains('active')){
     icon.classList.remove('fa-bars');
     icon.classList.add('fa-xmark');
   } else {
     icon.classList.remove('fa-xmark');
     icon.classList.add('fa-bars');
   }
+
 });
 
-// Close mobile menu when a link is clicked
 navItems.forEach(item => {
+
   item.addEventListener('click', () => {
+
     navLinks.classList.remove('active');
+
     const icon = menuBtn.querySelector('i');
+
     icon.classList.remove('fa-xmark');
     icon.classList.add('fa-bars');
+
   });
+
 });
 
-// Intersection Observer for Reveal Animations
 const reveals = document.querySelectorAll('.reveal');
+
 const observer = new IntersectionObserver((entries) => {
+
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
+
+    if(entry.isIntersecting){
       entry.target.classList.add('active');
     }
+
   });
-}, {
-  threshold: 0.10 // Triggers slightly earlier for smoother mobile experience
+
+},{
+  threshold:0.1
 });
 
 reveals.forEach(reveal => {
   observer.observe(reveal);
 });
+
 </script>
 
 </body>
