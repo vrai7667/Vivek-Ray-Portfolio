@@ -19,7 +19,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 90px; /* Offsets sticky nav when jumping to sections */
+  scroll-padding-top: 90px;
 }
 
 body {
@@ -34,6 +34,8 @@ body {
 /* VARIABLES */
 :root {
   --accent: #2563eb;
+  --accent-light: rgba(37, 99, 235, 0.08);
+  --accent-glow: rgba(37, 99, 235, 0.4);
   --text: #111111;
   --muted: #6b7280;
   --border: #e5e7eb;
@@ -228,46 +230,6 @@ a {
   box-shadow: 0 8px 20px rgba(0,0,0,0.05);
 }
 
-/* SOCIAL */
-.social-box {
-  margin-top: 64px;
-  padding: 30px;
-  border: 1px solid var(--border);
-  border-radius: 24px;
-  background: #fafafa;
-}
-
-.social-box h3 {
-  font-size: 16px;
-  margin-bottom: 20px;
-}
-
-.social-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 14px;
-}
-
-.social-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 16px;
-  border-radius: 16px;
-  background: #ffffff;
-  border: 1px solid var(--border);
-  font-size: 14px;
-  font-weight: 600;
-  transition: .3s ease;
-}
-
-.social-link:hover {
-  transform: translateY(-4px);
-  border-color: #d1d5db;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.04);
-}
-
 /* NUMBERS */
 .numbers {
   display: grid;
@@ -380,43 +342,164 @@ a {
   line-height: 1.7;
 }
 
-/* RESULTS */
-.results-grid {
+/* ========================================================= */
+/* DASHBOARD (RESULTS) - PREMIUM B2B SAAS STYLE              */
+/* ========================================================= */
+
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+}
+
+.dashboard-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-group-header {
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.dashboard-group-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+.dash-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
 }
 
-.result {
-  background: #fafafa;
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 28px;
-  transition: 0.3s ease;
-}
-
-.result:hover {
+/* Premium Card Design */
+.dash-card {
   background: #ffffff;
-  border-color: #d1d5db;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.01);
 }
 
-.result h3 {
-  font-size: clamp(32px, 4vw, 40px);
-  margin-bottom: 8px;
-  letter-spacing: -0.03em;
+/* Hover Elevation & Border Glow */
+.dash-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-glow);
+  box-shadow: 0 14px 40px var(--accent-light);
+  z-index: 2;
 }
 
-.result p {
+.dash-icon {
+  font-size: 24px;
   color: var(--muted);
+  margin-bottom: 24px;
+  transition: color 0.3s ease;
+  background: var(--subtle);
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.dash-card:hover .dash-icon {
+  color: var(--accent);
+  border-color: var(--accent-glow);
+  background: #eff6ff;
+}
+
+.dash-metric {
+  font-size: clamp(28px, 3vw, 34px);
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.03em;
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+
+.dash-subtitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.dash-desc {
   font-size: 14px;
-  font-weight: 500;
+  color: var(--muted);
+  line-height: 1.6;
+  flex-grow: 1; 
+  margin-bottom: 24px;
+}
+
+.dash-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+  transition: all 0.2s ease;
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--subtle);
+}
+
+.dash-link i {
+  font-size: 11px;
+  transition: transform 0.2s ease;
+}
+
+.dash-link:hover {
+  color: #1d4ed8;
+  gap: 8px;
+}
+
+.dash-link:hover i {
+  transform: translateX(3px) translateY(-3px);
+}
+
+.blog-action-wrapper {
+  margin-top: 32px;
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: 0 4px 15px var(--accent-light);
+  transform: translateY(-2px);
 }
 
 /* EXPERIENCE */
 .timeline {
   border-left: 2px solid var(--border);
   padding-left: 34px;
-  margin-left: 8px; /* Offset for better mobile view */
+  margin-left: 8px; 
 }
 
 .timeline-item {
@@ -537,11 +620,9 @@ footer {
 /* RESPONSIVE DESIGN                         */
 /* ========================================= */
 
-/* TABLET (Max Width: 1024px) */
 @media(max-width: 1024px) {
-  .services-grid,
-  .results-grid {
-    grid-template-columns: repeat(2, 1fr); /* Switch to 2 columns for better reading space */
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr); 
   }
 
   .numbers {
@@ -559,7 +640,6 @@ footer {
   }
 }
 
-/* MOBILE LANDSCAPE & SMALL TABLET (Max Width: 768px) */
 @media(max-width: 768px) {
   .wrap {
     padding: 0 20px;
@@ -569,7 +649,6 @@ footer {
     padding: 70px 0;
   }
 
-  /* Mobile Navigation Menu */
   .menu-btn {
     display: block;
   }
@@ -585,7 +664,6 @@ footer {
     padding: 0;
     border-bottom: 1px solid var(--border);
     box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-    /* Hidden state */
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
@@ -608,7 +686,6 @@ footer {
     font-size: 15px;
   }
 
-  /* Hero Adjustments */
   .hero {
     padding: 60px 0 50px;
   }
@@ -625,19 +702,23 @@ footer {
     width: 100%;
   }
 
-  /* Grid Reductions */
-  .social-grid,
   .about-grid,
-  .services-grid,
-  .results-grid {
+  .services-grid {
     grid-template-columns: 1fr;
   }
   
+  .dashboard-container {
+    gap: 54px;
+  }
+
+  .dash-grid {
+    grid-template-columns: 1fr;
+  }
+
   .about-grid {
     gap: 40px;
   }
 
-  /* Contact & Footer Adjustments */
   .contact-box {
     padding: 40px 20px;
   }
@@ -657,7 +738,6 @@ footer {
   }
 }
 
-/* MOBILE PORTRAIT (Max Width: 480px) */
 @media(max-width: 480px) {
   .hero h1 {
     font-size: 34px;
@@ -682,7 +762,7 @@ footer {
   
   .number-card .number {
     margin-bottom: 0;
-    min-width: 115px; /* Ensures all the labels start at the exact same vertical line */
+    min-width: 115px;
   }
   
   .number-card:last-child {
@@ -704,7 +784,6 @@ footer {
     <div class="nav-inner">
       <a href="#" class="logo">Vivek Ray</a>
       
-      <!-- Added Hamburger Button -->
       <button id="menu-btn" class="menu-btn" aria-label="Toggle Navigation">
         <i class="fa-solid fa-bars"></i>
       </button>
@@ -748,27 +827,6 @@ footer {
       <a href="tel:9971904537" class="btn btn-light">
         Call Me
       </a>
-    </div>
-
-    <div class="social-box">
-      <h3>ChemKlub Platforms & Blogs</h3>
-      <div class="social-grid">
-        <a href="https://www.linkedin.com/company/chemklub1/" target="_blank" rel="noopener noreferrer" class="social-link">
-          <i class="fa-brands fa-linkedin" style="color: #0a66c2;"></i> LinkedIn
-        </a>
-        <a href="https://www.instagram.com/chemklub_india/" target="_blank" rel="noopener noreferrer" class="social-link">
-          <i class="fa-brands fa-instagram" style="color: #e1306c;"></i> Instagram
-        </a>
-        <a href="https://www.youtube.com/@ChemklubIndia" target="_blank" rel="noopener noreferrer" class="social-link">
-          <i class="fa-brands fa-youtube" style="color: #ff0000;"></i> YouTube
-        </a>
-        <a href="https://www.threads.com/@chemklub_india" target="_blank" rel="noopener noreferrer" class="social-link">
-          <i class="fa-brands fa-threads"></i> Threads
-        </a>
-        <a href="https://chemklub.com/blog/" target="_blank" rel="noopener noreferrer" class="social-link">
-          <i class="fa-brands fa-wordpress" style="color: #21759b;"></i> ChemKlub Blog
-        </a>
-      </div>
     </div>
   </section>
 
@@ -865,34 +923,194 @@ footer {
     </div>
   </section>
 
-  <!-- RESULTS -->
+  <!-- DASHBOARD / CASE STUDY -->
   <section class="section reveal" id="results">
-    <div class="label">Key Results</div>
-    <div class="results-grid">
-      <div class="result">
-        <h3>200x</h3>
-        <p>Instagram growth (500 → 100K+)</p>
+    <div class="label">ChemKlub Case Study</div>
+    
+    <div class="dashboard-container">
+
+      <!-- 1. SOCIAL MEDIA GROWTH -->
+      <div class="dashboard-group">
+        <div class="dashboard-group-header">
+          <h3 class="dashboard-group-title">Growth Metrics</h3>
+        </div>
+        <div class="dash-grid">
+          
+          <div class="dash-card">
+            <div class="dash-icon"><i class="fa-brands fa-instagram"></i></div>
+            <div class="dash-metric">500 → 100K+</div>
+            <div class="dash-subtitle">Instagram Followers</div>
+            <div class="dash-desc">Scaled technical community completely organically to active engineering professionals globally.</div>
+            <a href="https://www.instagram.com/chemklub_india/" target="_blank" rel="noopener noreferrer" class="dash-link">View Instagram <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+
+          <div class="dash-card">
+            <div class="dash-icon"><i class="fa-brands fa-linkedin"></i></div>
+            <div class="dash-metric">2K → 33K+</div>
+            <div class="dash-subtitle">LinkedIn Followers</div>
+            <div class="dash-desc">Grew premium B2B audience generating high-intent technical inquiries and professional leads.</div>
+            <a href="https://www.linkedin.com/company/chemklub1/?viewAsMember=true" target="_blank" rel="noopener noreferrer" class="dash-link">View LinkedIn <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+
+          <div class="dash-card">
+            <div class="dash-icon"><i class="fa-brands fa-threads"></i></div>
+            <div class="dash-metric">100 → 7K+</div>
+            <div class="dash-subtitle">Threads Followers</div>
+            <div class="dash-desc">Capitalized on early platform adoption to secure a loyal text-based technical community.</div>
+            <a href="https://www.threads.com/@chemklub_india" target="_blank" rel="noopener noreferrer" class="dash-link">View Threads <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+
+          <div class="dash-card">
+            <div class="dash-icon"><i class="fa-brands fa-youtube"></i></div>
+            <div class="dash-metric">100 → 2.5K+</div>
+            <div class="dash-subtitle">YouTube Subscribers</div>
+            <div class="dash-desc">Built an ever-green library of technical video content driving steady subscriber growth.</div>
+            <a href="https://www.youtube.com/@ChemKlub" target="_blank" rel="noopener noreferrer" class="dash-link">View YouTube <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+
+        </div>
       </div>
-      <div class="result">
-        <h3>16x</h3>
-        <p>LinkedIn growth (2K → 33K+)</p>
+
+      <!-- 2. META ADS PERFORMANCE -->
+      <div class="dashboard-group">
+        <div class="dashboard-group-header">
+          <h3 class="dashboard-group-title">Campaign Performance</h3>
+        </div>
+        <div class="dash-grid">
+
+          <div class="dash-card">
+            <div class="dash-icon"><i class="fa-solid fa-wallet"></i></div>
+            <div class="dash-metric">₹50K+</div>
+            <div class="dash-subtitle">Ad Spend Managed</div>
+            <div class="dash-desc">Strategically optimized Meta Ads budget focused strictly on B2B engineering lead generation.</div>
+          </div>
+
+          <div class="dash-card">
+            <div class="dash-icon"><i class="fa-solid fa-filter"></i></div>
+            <div class="dash-metric">Webinar</div>
+            <div class="dash-subtitle">Campaign Funnels</div>
+            <div class="dash-desc">Built end-to-end ad funnels driving high-quality technical registrations at scale.</div>
+          </div>
+
+          <div class="dash-card">
+            <div class="dash-icon"><i class="fa-solid fa-users-viewfinder"></i></div>
+            <div class="dash-metric">Lead Gen</div>
+            <div class="dash-subtitle">Targeted Campaigns</div>
+            <div class="dash-desc">Executed complex audience targeting to reach highly niche chemical and process engineers.</div>
+          </div>
+
+          <div class="dash-card">
+            <div class="dash-icon"><i class="fa-solid fa-chart-line"></i></div>
+            <div class="dash-metric">CPL Drop</div>
+            <div class="dash-subtitle">Cost Optimization</div>
+            <div class="dash-desc">Continuously A/B tested ad creatives and sales copy to achieve cost-efficient acquisition.</div>
+          </div>
+
+        </div>
       </div>
-      <div class="result">
-        <h3>70x</h3>
-        <p>Threads growth (100 → 7K+)</p>
+
+      <!-- 3. WEBINAR & INBOUND LEADS -->
+      <div class="dashboard-group">
+        <div class="dashboard-group-header">
+          <h3 class="dashboard-group-title">Organic Lead Generation</h3>
+        </div>
+        
+        <!-- Nested Grid for Webinars -->
+        <h4 class="label" style="margin-bottom: 20px;">Webinar Operations</h4>
+        <div class="dash-grid" style="margin-bottom: 40px;">
+          <div class="dash-card">
+            <div class="dash-icon"><i class="fa-solid fa-diagram-project"></i></div>
+            <div class="dash-metric">Execution</div>
+            <div class="dash-subtitle">Funnel Campaigns</div>
+            <div class="dash-desc">Mapped and executed the entire webinar journey from top-of-funnel awareness to live attendance.</div>
+          </div>
+
+          <div class="dash-card">
+            <div class="dash-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
+            <div class="dash-metric">Automation</div>
+            <div class="dash-subtitle">Email Marketing</div>
+            <div class="dash-desc">Deployed automated nurture sequences to improve show-up rates and convert attendees into buyers.</div>
+          </div>
+        </div>
+
+        <!-- Nested Grid for Inbound -->
+        <h4 class="label" style="margin-bottom: 20px;">Inbound Lead Channels</h4>
+        <div class="dash-grid">
+          <div class="dash-card">
+            <div class="dash-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+            <div class="dash-metric">LinkedIn</div>
+            <div class="dash-subtitle">Inbound Leads</div>
+            <div class="dash-desc">Turned company pages into a consistent B2B inbound engine through thought leadership.</div>
+          </div>
+
+          <div class="dash-card">
+            <div class="dash-icon"><i class="fa-brands fa-instagram"></i></div>
+            <div class="dash-metric">Instagram</div>
+            <div class="dash-subtitle">Inbound Leads</div>
+            <div class="dash-desc">Leveraged targeted Reels and carousels to drive immense top-of-funnel DM inquiries.</div>
+          </div>
+
+          <div class="dash-card">
+            <div class="dash-icon"><i class="fa-brands fa-google"></i></div>
+            <div class="dash-metric">Search</div>
+            <div class="dash-subtitle">SEO-Generated Leads</div>
+            <div class="dash-desc">Captured high-intent bottom-funnel traffic solving specific engineering search queries.</div>
+          </div>
+
+          <div class="dash-card">
+            <div class="dash-icon"><i class="fa-solid fa-at"></i></div>
+            <div class="dash-metric">Direct</div>
+            <div class="dash-subtitle">Email Marketing Leads</div>
+            <div class="dash-desc">Re-engaged and converted long-term newsletter subscribers into active business prospects.</div>
+          </div>
+        </div>
+
       </div>
-      <div class="result">
-        <h3>₹50K</h3>
-        <p>Meta Ads budget handled</p>
+
+      <!-- 4. CONTENT & SEO IMPACT -->
+      <div class="dashboard-group">
+        <div class="dashboard-group-header">
+          <h3 class="dashboard-group-title">Content & SEO Impact</h3>
+        </div>
+        <div class="dash-grid">
+
+          <div class="dash-card">
+            <div class="dash-icon"><i class="fa-brands fa-wordpress"></i></div>
+            <div class="dash-metric">Platform</div>
+            <div class="dash-subtitle">WordPress Management</div>
+            <div class="dash-desc">Built, structured, and managed the technical architecture of the main company blog.</div>
+          </div>
+
+          <div class="dash-card">
+            <div class="dash-icon"><i class="fa-solid fa-laptop-code"></i></div>
+            <div class="dash-metric">Strategy</div>
+            <div class="dash-subtitle">Technical SEO Blogs</div>
+            <div class="dash-desc">Researched low-competition technical keywords and structured content for ranking visibility.</div>
+          </div>
+
+          <div class="dash-card">
+            <div class="dash-icon"><i class="fa-solid fa-gears"></i></div>
+            <div class="dash-metric">Authority</div>
+            <div class="dash-subtitle">Engineering Content</div>
+            <div class="dash-desc">Authored highly specific deep-dive guides on Aspen Plus, HYSYS, and process safety.</div>
+          </div>
+
+          <div class="dash-card">
+            <div class="dash-icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
+            <div class="dash-metric">Acquisition</div>
+            <div class="dash-subtitle">Organic Traffic Gen.</div>
+            <div class="dash-desc">Significantly increased monthly site visitors through compounded search engine returns.</div>
+          </div>
+
+        </div>
+        
+        <div class="blog-action-wrapper">
+          <a href="https://chemklub.com/blog/" target="_blank" rel="noopener noreferrer" class="btn-outline">
+            <i class="fa-solid fa-book-open"></i> Read the ChemKlub Blog
+          </a>
+        </div>
       </div>
-      <div class="result">
-        <h3>1,500+</h3>
-        <p>Webinar leads/month</p>
-      </div>
-      <div class="result">
-        <h3>2,500+</h3>
-        <p>Inbound leads/month</p>
-      </div>
+
     </div>
   </section>
 
@@ -980,12 +1198,10 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('active');
-      // Optional: Stop observing once revealed
-      // observer.unobserve(entry.target); 
     }
   });
 }, {
-  threshold: 0.15
+  threshold: 0.10 // Triggers slightly earlier for smoother mobile experience
 });
 
 reveals.forEach(reveal => {
