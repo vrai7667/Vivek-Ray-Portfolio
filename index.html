@@ -1,1032 +1,1080 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Vivek Ray — B2B Growth Marketer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <style>
-    /* ─── RESET & BASE ─────────────────────────────── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; font-size: 16px; }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #fff;
-      color: #111;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-    }
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    /* ─── CSS VARIABLES ────────────────────────────── */
-    :root {
-      --accent:    #2563eb;
-      --accent-bg: #eff4ff;
-      --text:      #111;
-      --muted:     #6b7280;
-      --faint:     #9ca3af;
-      --subtle:    #f5f5f5;
-      --border:    #e5e7eb;
-      --white:     #fff;
-      --radius:    8px;
-      --max:       1000px;
-      --px:        clamp(16px, 5vw, 32px);
-    }
+<title>Vivek Ray — B2B Growth Marketer</title>
 
-    /* ─── LAYOUT ────────────────────────────────────── */
-    .wrap {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 0 var(--px);
-    }
-    .section-divider { border: none; border-top: 1px solid var(--border); }
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    /* ─── SCROLL REVEAL ─────────────────────────────── */
-    .reveal {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity .6s cubic-bezier(.22,1,.36,1),
-                  transform .6s cubic-bezier(.22,1,.36,1);
-    }
-    .reveal.in { opacity: 1; transform: none; }
-    .d1 { transition-delay: .07s; }
-    .d2 { transition-delay: .14s; }
-    .d3 { transition-delay: .21s; }
-    .d4 { transition-delay: .28s; }
-    .d5 { transition-delay: .35s; }
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 
-    /* ─── NAV ───────────────────────────────────────── */
-    #nav {
-      position: sticky; top: 0; z-index: 200;
-      background: rgba(255,255,255,.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid transparent;
-      transition: border-color .3s, box-shadow .3s;
-    }
-    #nav.scrolled {
-      border-color: var(--border);
-      box-shadow: 0 2px 16px rgba(0,0,0,.06);
-    }
-    .nav-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 60px;
-    }
-    .nav-logo {
-      font-size: 15px;
-      font-weight: 600;
-    }
-    .nav-links {
-      display: flex;
-      gap: 28px;
-      list-style: none;
-    }
-    .nav-links a {
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--muted);
-      transition: color .2s;
-    }
-    .nav-links a:hover { color: var(--text); }
+<style>
 
-    /* hamburger */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      padding: 4px;
-      background: none;
-      border: none;
-    }
-    .hamburger span {
-      display: block;
-      width: 22px; height: 2px;
-      background: var(--text);
-      border-radius: 2px;
-      transition: all .3s;
-    }
-    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .hamburger.open span:nth-child(2) { opacity: 0; }
-    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-    /* mobile drawer */
-    .nav-drawer {
-      display: none;
-      flex-direction: column;
-      padding: 16px var(--px) 24px;
-      border-top: 1px solid var(--border);
-      gap: 4px;
-      background: var(--white);
-    }
-    .nav-drawer.open { display: flex; }
-    .nav-drawer a {
-      font-size: 15px;
-      font-weight: 500;
-      color: var(--muted);
-      padding: 10px 0;
-      border-bottom: 1px solid var(--border);
-      transition: color .2s;
-    }
-    .nav-drawer a:last-child { border-bottom: none; }
-    .nav-drawer a:hover { color: var(--text); }
+html{
+  scroll-behavior:smooth;
+}
 
-    /* ─── BUTTONS ───────────────────────────────────── */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 10px 20px;
-      border-radius: var(--radius);
-      font-size: 13px;
-      font-weight: 600;
-      transition: all .2s ease;
-      cursor: pointer;
-      white-space: nowrap;
-      border: none;
-    }
-    .btn-dark { background: var(--text); color: #fff; }
-    .btn-dark:hover { background: #333; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,.15); }
-    .btn-dark:active { transform: none; box-shadow: none; }
-    .btn-ghost { background: transparent; color: var(--muted); border: 1px solid var(--border); }
-    .btn-ghost:hover { border-color: #aaa; color: var(--text); transform: translateY(-1px); }
-    .btn-accent { background: var(--accent); color: #fff; }
-    .btn-accent:hover { background: #1d4ed8; transform: translateY(-1px); box-shadow: 0 4px 14px rgba(37,99,235,.3); }
+body{
+  font-family:'Inter',sans-serif;
+  background:#ffffff;
+  color:#111111;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  line-height:1.7;
+}
 
-    /* ─── SECTION LABEL ─────────────────────────────── */
-    .sec-label {
-      font-size: 11px;
-      font-weight: 600;
-      color: var(--faint);
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      margin-bottom: 28px;
-    }
+/* VARIABLES */
 
-    /* ─── AVAILABILITY BADGE ────────────────────────── */
-    .avail-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 11px;
-      font-weight: 500;
-      color: #16a34a;
-      background: #f0fdf4;
-      border: 1px solid #bbf7d0;
-      padding: 4px 12px;
-      border-radius: 20px;
-      margin-bottom: 20px;
-    }
-    .avail-dot {
-      width: 6px; height: 6px;
-      background: #16a34a;
-      border-radius: 50%;
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-      0%,100% { opacity: 1; }
-      50%      { opacity: .4; }
-    }
+:root{
+  --accent:#2563eb;
+  --text:#111111;
+  --muted:#6b7280;
+  --border:#e5e7eb;
+  --subtle:#f7f7f7;
+  --radius:14px;
+  --max:1120px;
+}
 
-    /* ─── HERO ──────────────────────────────────────── */
-    .hero {
-      padding: clamp(56px,8vw,80px) 0 clamp(48px,6vw,64px);
-      border-bottom: 1px solid var(--border);
-    }
-    .hero-eyebrow {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 500;
-      color: var(--muted);
-      background: var(--subtle);
-      padding: 4px 10px;
-      border-radius: 4px;
-      letter-spacing: .04em;
-      margin-bottom: 18px;
-    }
-    .hero h1 {
-      font-size: clamp(28px, 5.5vw, 46px);
-      font-weight: 700;
-      letter-spacing: -.03em;
-      line-height: 1.15;
-      margin-bottom: 14px;
-    }
-    .hero h1 .hl {
-      color: var(--accent);
-      position: relative;
-      display: inline-block;
-    }
-    .hero h1 .hl::after {
-      content: '';
-      position: absolute;
-      bottom: -2px; left: 0;
-      width: 0; height: 2px;
-      background: var(--accent);
-      border-radius: 2px;
-      animation: lineGrow .6s .9s ease forwards;
-    }
-    @keyframes lineGrow { to { width: 100%; } }
-    .hero-sub {
-      font-size: clamp(14px,2.2vw,15px);
-      color: var(--muted);
-      max-width: 500px;
-      line-height: 1.8;
-      margin-bottom: 30px;
-    }
-    .hero-cta {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-    /* hero stagger */
-    .hero .avail-badge { animation: enterUp .5s .05s both; }
-    .hero .hero-eyebrow { animation: enterUp .5s .1s both; }
-    .hero h1            { animation: enterUp .5s .2s both; }
-    .hero .hero-sub     { animation: enterUp .5s .3s both; }
-    .hero .hero-cta     { animation: enterUp .5s .4s both; }
-    @keyframes enterUp {
-      from { opacity: 0; transform: translateY(14px); }
-      to   { opacity: 1; transform: none; }
-    }
+/* GLOBAL */
 
-    /* ─── NUMBERS ───────────────────────────────────── */
-    .numbers-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      padding: clamp(32px,5vw,48px) 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .num-item {
-      padding: 8px 0;
-      transition: transform .2s;
-    }
-    .num-item:hover { transform: translateY(-2px); }
-    .num-item + .num-item {
-      border-left: 1px solid var(--border);
-      padding-left: clamp(14px,3vw,24px);
-    }
-    .num-val {
-      font-size: clamp(22px,3.5vw,28px);
-      font-weight: 700;
-      letter-spacing: -.03em;
-      color: var(--text);
-      line-height: 1;
-      margin-bottom: 4px;
-    }
-    .num-label { font-size: 11px; color: var(--faint); line-height: 1.4; }
+.wrap{
+  max-width:var(--max);
+  margin:auto;
+  padding:0 24px;
+}
 
-    /* ─── ABOUT ─────────────────────────────────────── */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(24px,4vw,40px);
-      align-items: start;
-    }
-    .about-text p {
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 1.85;
-      margin-bottom: 14px;
-    }
-    .about-text p:last-child { margin-bottom: 0; }
-    .about-cards {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .about-card {
-      background: var(--subtle);
-      border-radius: var(--radius);
-      padding: 16px 18px;
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      transition: background .2s;
-    }
-    .about-card:hover { background: var(--accent-bg); }
-    .about-card-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
-    .about-card-title { font-size: 13px; font-weight: 600; margin-bottom: 2px; }
-    .about-card-sub   { font-size: 12px; color: var(--muted); }
+a{
+  text-decoration:none;
+  color:inherit;
+}
 
-    /* ─── SERVICES (WHAT I DO) ──────────────────────── */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-    }
-    .service-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 22px;
-      transition: border-color .2s, box-shadow .2s, transform .2s;
-    }
-    .service-card:hover {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px var(--accent-bg);
-      transform: translateY(-2px);
-    }
-    .service-icon { font-size: 24px; margin-bottom: 12px; }
-    .service-title { font-size: 14px; font-weight: 600; margin-bottom: 6px; }
-    .service-desc  { font-size: 12px; color: var(--muted); line-height: 1.6; }
+img{
+  max-width:100%;
+  display:block;
+}
 
-    /* ─── GROWTH BARS ───────────────────────────────── */
-    .metric-row {
-      display: grid;
-      grid-template-columns: clamp(90px,18vw,120px) 1fr clamp(80px,18vw,110px);
-      align-items: center;
-      gap: clamp(10px,2.5vw,16px);
-      padding: 13px 0;
-      border-bottom: 1px solid #fafafa;
-      cursor: pointer;
-      text-decoration: none;
-      color: inherit;
-    }
-    .metric-row:last-child { border-bottom: none; }
-    .metric-platform {
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--muted);
-      transition: color .2s;
-    }
-    .metric-row:hover .metric-platform { color: var(--text); }
-    .bar-wrap {
-      height: 3px;
-      background: var(--border);
-      border-radius: 2px;
-      overflow: hidden;
-    }
-    .bar {
-      height: 100%;
-      background: var(--accent);
-      border-radius: 2px;
-      width: 0;
-      transition: width 1.1s cubic-bezier(.22,1,.36,1);
-    }
-    .metric-val { font-size: 12px; font-weight: 600; text-align: right; white-space: nowrap; }
+.section{
+  padding:85px 0;
+  border-bottom:1px solid var(--border);
+}
 
-    /* ─── EXPERIENCE TIMELINE ───────────────────────── */
-    .timeline { display: flex; flex-direction: column; gap: 0; }
-    .tl-item {
-      display: grid;
-      grid-template-columns: 120px 1fr;
-      gap: clamp(16px,3vw,28px);
-      padding-bottom: 36px;
-      position: relative;
-    }
-    .tl-item:last-child { padding-bottom: 0; }
-    .tl-left { padding-top: 2px; }
-    .tl-period { font-size: 11px; color: var(--faint); line-height: 1.5; }
-    .tl-dot-line {
-      width: 1px;
-      background: var(--border);
-      position: absolute;
-      left: 130px;
-      top: 8px;
-      bottom: 0;
-    }
-    .tl-item:last-child .tl-dot-line { display: none; }
-    .tl-right { position: relative; }
-    .tl-right::before {
-      content: '';
-      position: absolute;
-      left: calc(-1 * clamp(16px,3vw,28px) - 4px);
-      top: 6px;
-      width: 8px; height: 8px;
-      background: var(--accent);
-      border-radius: 50%;
-      border: 2px solid #fff;
-      box-shadow: 0 0 0 2px var(--accent);
-    }
-    .tl-role {
-      font-size: 15px;
-      font-weight: 600;
-      margin-bottom: 2px;
-    }
-    .tl-company { font-size: 13px; color: var(--muted); margin-bottom: 14px; }
-    .tl-list { list-style: none; display: flex; flex-direction: column; gap: 9px; }
-    .tl-list li {
-      font-size: 13px;
-      color: #555;
-      padding-left: 14px;
-      position: relative;
-      line-height: 1.7;
-      transition: color .2s;
-    }
-    .tl-list li::before {
-      content: '–';
-      position: absolute;
-      left: 0;
-      color: #ccc;
-      transition: color .2s;
-    }
-    .tl-list li:hover { color: var(--text); }
-    .tl-list li:hover::before { color: var(--accent); }
+.label{
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.18em;
+  color:#9ca3af;
+  margin-bottom:34px;
+  font-weight:700;
+}
 
-    /* ─── RESULTS / CASE HIGHLIGHT ──────────────────── */
-    .results-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-    }
-    .result-card {
-      background: var(--subtle);
-      border-radius: var(--radius);
-      padding: 20px;
-      transition: background .2s, transform .2s;
-    }
-    .result-card:hover { background: var(--accent-bg); transform: translateY(-2px); }
-    .result-num {
-      font-size: clamp(22px,3.5vw,28px);
-      font-weight: 700;
-      letter-spacing: -.03em;
-      color: var(--text);
-      margin-bottom: 4px;
-    }
-    .result-label { font-size: 12px; color: var(--muted); line-height: 1.5; }
+/* NAVBAR */
 
-    /* ─── TOOLS ─────────────────────────────────────── */
-    .tools-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-      gap: 10px;
-    }
-    .tool-item {
-      background: var(--subtle);
-      border-radius: var(--radius);
-      padding: 14px 12px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-      text-align: center;
-      transition: background .2s, transform .2s;
-    }
-    .tool-item:hover { background: var(--accent-bg); transform: translateY(-2px); }
-    .tool-icon { font-size: 20px; }
-    .tool-name { font-size: 11px; font-weight: 600; color: var(--muted); }
+#nav{
+  position:sticky;
+  top:0;
+  z-index:999;
+  background:rgba(255,255,255,.82);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid transparent;
+  transition:.35s ease;
+}
 
-    /* ─── SKILLS ─────────────────────────────────────── */
-    .skills-list { display: flex; flex-direction: column; gap: 16px; }
-    .skill-row {
-      display: grid;
-      grid-template-columns: 110px 1fr;
-      gap: 16px;
-      align-items: start;
-    }
-    .skill-cat { font-size: 12px; color: var(--faint); padding-top: 4px; }
-    .tags { display: flex; flex-wrap: wrap; gap: 6px; }
-    .tag {
-      font-size: 12px;
-      font-weight: 500;
-      color: #444;
-      background: var(--subtle);
-      padding: 4px 12px;
-      border-radius: 20px;
-      transition: background .15s, color .15s, transform .15s;
-    }
-    .tag:hover { background: var(--accent-bg); color: var(--accent); transform: translateY(-1px); }
+#nav.scrolled{
+  border-color:var(--border);
+  box-shadow:0 2px 20px rgba(0,0,0,.04);
+}
 
-    /* ─── WHAT I OFFER (CTA STRIP) ──────────────────── */
-    .offer-strip {
-      background: var(--subtle);
-      border-radius: 12px;
-      padding: clamp(24px,4vw,36px);
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: center;
-      gap: 20px;
-    }
-    .offer-title { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
-    .offer-sub   { font-size: 13px; color: var(--muted); }
+.nav-inner{
+  height:72px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
 
-    /* ─── CONTACT ────────────────────────────────────── */
-    .contact-box {
-      background: var(--text);
-      color: #fff;
-      border-radius: 12px;
-      padding: clamp(28px,5vw,44px);
-    }
-    .contact-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      gap: 20px;
-      margin-bottom: 28px;
-    }
-    .contact-box h2 {
-      font-size: clamp(20px,3.5vw,26px);
-      font-weight: 700;
-      letter-spacing: -.02em;
-      margin-bottom: 4px;
-    }
-    .contact-box p { font-size: 13px; color: rgba(255,255,255,.5); }
-    .contact-links-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(140px,1fr));
-      gap: 10px;
-      padding-top: 20px;
-      border-top: 1px solid rgba(255,255,255,.08);
-    }
-    .c-link {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-      padding: 12px 14px;
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.08);
-      border-radius: var(--radius);
-      font-size: 13px;
-      font-weight: 500;
-      transition: background .2s, transform .2s;
-    }
-    .c-link:hover { background: rgba(255,255,255,.12); transform: translateY(-1px); }
-    .c-link-icon { font-size: 15px; }
-    .c-link-arrow { opacity: .4; font-size: 12px; }
+.logo{
+  font-size:15px;
+  font-weight:800;
+  letter-spacing:-0.02em;
+}
 
-    /* ─── FOOTER ─────────────────────────────────────── */
-    footer {
-      padding: clamp(20px,3vw,28px) 0 clamp(28px,4vw,40px);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 8px;
-      font-size: 12px;
-      color: #ccc;
-    }
+.nav-links{
+  display:flex;
+  gap:30px;
+  list-style:none;
+}
 
-    /* ─── SECTION SPACING ────────────────────────────── */
-    .sec { padding: clamp(40px,6vw,56px) 0; border-bottom: 1px solid var(--border); }
-    .sec:last-of-type { border-bottom: none; }
+.nav-links a{
+  font-size:14px;
+  color:var(--muted);
+  transition:.25s;
+  position:relative;
+}
 
-    /* ─── RESPONSIVE ─────────────────────────────────── */
+.nav-links a::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0%;
+  height:2px;
+  background:var(--accent);
+  transition:.3s;
+}
 
-    /* tablet */
-    @media (max-width: 768px) {
-      .services-grid { grid-template-columns: 1fr 1fr; }
-      .results-grid  { grid-template-columns: 1fr 1fr; }
-      .about-grid    { grid-template-columns: 1fr; }
-      .tl-dot-line   { display: none; }
-      .tl-item       { grid-template-columns: 1fr; gap: 4px; }
-      .tl-left       { display: flex; align-items: center; gap: 8px; }
-      .tl-period     { font-size: 11px; }
-      .tl-right::before { display: none; }
-      .offer-strip   { grid-template-columns: 1fr; }
-    }
+.nav-links a:hover{
+  color:var(--text);
+}
 
-    /* mobile */
-    @media (max-width: 560px) {
-      .nav-links  { display: none; }
-      .hamburger  { display: flex; }
+.nav-links a:hover::after{
+  width:100%;
+}
 
-      .numbers-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 20px 0;
-        padding: 28px 0;
-      }
-      .num-item + .num-item { border-left: none; padding-left: 0; }
-      .num-item:nth-child(even) {
-        border-left: 1px solid var(--border);
-        padding-left: 16px;
-      }
+/* HERO */
 
-      .services-grid { grid-template-columns: 1fr; }
-      .results-grid  { grid-template-columns: 1fr 1fr; }
+.hero{
+  padding:100px 0 80px;
+  position:relative;
+}
 
-      .metric-row {
-        grid-template-columns: 80px 1fr 80px;
-        gap: 8px;
-      }
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:#eff6ff;
+  border:1px solid #bfdbfe;
+  color:#1d4ed8;
+  padding:7px 14px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:600;
+  margin-bottom:20px;
+  animation:fadeUp .7s ease;
+}
 
-      .skill-row { grid-template-columns: 1fr; gap: 8px; }
-      .skill-cat { padding-top: 0; }
+.dot{
+  width:8px;
+  height:8px;
+  background:#16a34a;
+  border-radius:50%;
+  animation:pulse 1.6s infinite;
+}
 
-      .contact-top { flex-direction: column; }
-      footer { flex-direction: column; align-items: flex-start; gap: 4px; }
-    }
+@keyframes pulse{
+  0%,100%{opacity:1;}
+  50%{opacity:.4;}
+}
 
-    @media (max-width: 380px) {
-      .results-grid { grid-template-columns: 1fr; }
-      .metric-row { grid-template-columns: 75px 1fr 74px; font-size: 12px; }
-    }
-  </style>
+.hero-tag{
+  display:inline-block;
+  background:var(--subtle);
+  color:var(--muted);
+  padding:6px 12px;
+  border-radius:8px;
+  font-size:12px;
+  margin-bottom:24px;
+  animation:fadeUp .8s ease;
+}
+
+.hero h1{
+  font-size:clamp(40px,6vw,70px);
+  line-height:1.05;
+  letter-spacing:-0.06em;
+  margin-bottom:24px;
+  max-width:850px;
+  animation:fadeUp .9s ease;
+}
+
+.hero h1 span{
+  color:var(--accent);
+}
+
+.hero p{
+  max-width:700px;
+  color:var(--muted);
+  font-size:16px;
+  line-height:1.9;
+  margin-bottom:38px;
+  animation:fadeUp 1s ease;
+}
+
+.hero-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  animation:fadeUp 1.1s ease;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:13px 22px;
+  border-radius:10px;
+  font-size:14px;
+  font-weight:600;
+  transition:.3s ease;
+}
+
+.btn-dark{
+  background:#111111;
+  color:#ffffff;
+}
+
+.btn-dark:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 25px rgba(0,0,0,.14);
+}
+
+.btn-light{
+  border:1px solid var(--border);
+  color:var(--muted);
+}
+
+.btn-light:hover{
+  border-color:#bdbdbd;
+  transform:translateY(-2px);
+  color:var(--text);
+}
+
+/* NUMBERS */
+
+.numbers{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+  padding:60px 0;
+  border-bottom:1px solid var(--border);
+}
+
+.number-card{
+  position:relative;
+  padding-right:20px;
+}
+
+.number-card:not(:last-child){
+  border-right:1px solid var(--border);
+}
+
+.number{
+  font-size:40px;
+  font-weight:800;
+  letter-spacing:-0.05em;
+  margin-bottom:8px;
+}
+
+.number-label{
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* ABOUT */
+
+.about-grid{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:50px;
+}
+
+.about-text p{
+  margin-bottom:20px;
+  color:var(--muted);
+  font-size:15px;
+  line-height:1.95;
+}
+
+.about-cards{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+.about-card{
+  background:var(--subtle);
+  padding:22px;
+  border-radius:14px;
+  transition:.3s ease;
+}
+
+.about-card:hover{
+  transform:translateY(-5px);
+  background:#eef4ff;
+}
+
+.about-card h4{
+  margin-bottom:6px;
+  font-size:15px;
+}
+
+.about-card p{
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* SERVICES */
+
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.service{
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:28px;
+  transition:.35s ease;
+  background:#fff;
+}
+
+.service:hover{
+  transform:translateY(-6px);
+  border-color:#bfd3ff;
+  box-shadow:0 18px 35px rgba(37,99,235,.08);
+}
+
+.service i{
+  font-size:24px;
+  color:var(--accent);
+  margin-bottom:18px;
+}
+
+.service h4{
+  margin-bottom:10px;
+  font-size:16px;
+}
+
+.service p{
+  font-size:14px;
+  color:var(--muted);
+}
+
+/* RESULTS */
+
+.results-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.result{
+  background:var(--subtle);
+  border-radius:16px;
+  padding:28px;
+  transition:.3s ease;
+}
+
+.result:hover{
+  transform:translateY(-5px);
+  background:#eef4ff;
+}
+
+.result h3{
+  font-size:40px;
+  letter-spacing:-0.05em;
+  margin-bottom:8px;
+}
+
+.result p{
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* PLATFORM */
+
+.platforms{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+.platform{
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:18px;
+  transition:.3s ease;
+}
+
+.platform:hover{
+  border-color:#bfd3ff;
+  transform:translateY(-3px);
+}
+
+.platform-top{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:12px;
+  font-size:14px;
+  font-weight:600;
+}
+
+.bar-wrap{
+  width:100%;
+  height:5px;
+  border-radius:999px;
+  overflow:hidden;
+  background:#e5e7eb;
+}
+
+.bar{
+  height:100%;
+  width:0%;
+  border-radius:999px;
+  background:var(--accent);
+  transition:1.6s cubic-bezier(.22,1,.36,1);
+}
+
+/* EXPERIENCE */
+
+.timeline{
+  border-left:2px solid var(--border);
+  padding-left:34px;
+}
+
+.timeline-item{
+  position:relative;
+  margin-bottom:42px;
+}
+
+.timeline-item:last-child{
+  margin-bottom:0;
+}
+
+.timeline-item::before{
+  content:'';
+  position:absolute;
+  width:14px;
+  height:14px;
+  border-radius:50%;
+  background:var(--accent);
+  left:-42px;
+  top:4px;
+}
+
+.timeline small{
+  color:#9ca3af;
+  display:block;
+  margin-bottom:6px;
+}
+
+.timeline h3{
+  margin-bottom:4px;
+}
+
+.timeline p{
+  color:var(--muted);
+  margin-bottom:16px;
+}
+
+.timeline ul{
+  padding-left:18px;
+}
+
+.timeline li{
+  margin-bottom:12px;
+  color:#555;
+}
+
+/* CONTACT */
+
+.contact-box{
+  background:#111111;
+  color:#fff;
+  border-radius:22px;
+  padding:50px;
+  position:relative;
+  overflow:hidden;
+}
+
+.contact-box::before{
+  content:'';
+  position:absolute;
+  width:300px;
+  height:300px;
+  background:rgba(255,255,255,.03);
+  border-radius:50%;
+  top:-120px;
+  right:-120px;
+}
+
+.contact-box h2{
+  font-size:42px;
+  line-height:1.1;
+  margin-bottom:14px;
+  position:relative;
+}
+
+.contact-box p{
+  color:rgba(255,255,255,.7);
+  margin-bottom:30px;
+  position:relative;
+}
+
+.contact-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  position:relative;
+}
+
+.contact-links a{
+  background:rgba(255,255,255,.08);
+  padding:14px 18px;
+  border-radius:12px;
+  transition:.3s ease;
+}
+
+.contact-links a:hover{
+  background:rgba(255,255,255,.16);
+  transform:translateY(-3px);
+}
+
+/* FOOTER */
+
+footer{
+  padding:34px 0 50px;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:12px;
+  color:#9ca3af;
+  font-size:13px;
+}
+
+/* REVEAL ANIMATION */
+
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:1s cubic-bezier(.22,1,.36,1);
+}
+
+.reveal.active{
+  opacity:1;
+  transform:none;
+}
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(24px);
+  }
+  to{
+    opacity:1;
+    transform:none;
+  }
+}
+
+/* RESPONSIVE */
+
+@media(max-width:980px){
+
+  .services-grid,
+  .results-grid,
+  .about-grid{
+    grid-template-columns:1fr;
+  }
+
+  .numbers{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+@media(max-width:680px){
+
+  .nav-links{
+    display:none;
+  }
+
+  .numbers{
+    grid-template-columns:1fr;
+  }
+
+  .number-card{
+    border-right:none !important;
+    padding-right:0;
+  }
+
+  .hero{
+    padding:80px 0 60px;
+  }
+
+  .hero h1{
+    font-size:44px;
+  }
+
+  .contact-box{
+    padding:34px;
+  }
+
+  .contact-box h2{
+    font-size:32px;
+  }
+
+  footer{
+    flex-direction:column;
+  }
+
+}
+
+</style>
 </head>
+
 <body>
 
-<!-- ── NAV ── -->
-<div id="nav">
+<!-- NAV -->
+
+<nav id="nav">
   <div class="wrap">
     <div class="nav-inner">
-      <a class="nav-logo" href="#">Vivek Ray</a>
+
+      <a href="#" class="logo">Vivek Ray</a>
+
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#results">Results</a></li>
         <li><a href="#experience">Experience</a></li>
-        <li><a href="#skills">Skills</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <button class="hamburger" id="ham" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
+
     </div>
   </div>
-  <div class="nav-drawer" id="drawer">
-    <a href="#about"      onclick="closeDrawer()">About</a>
-    <a href="#services"   onclick="closeDrawer()">Services</a>
-    <a href="#results"    onclick="closeDrawer()">Results</a>
-    <a href="#experience" onclick="closeDrawer()">Experience</a>
-    <a href="#skills"     onclick="closeDrawer()">Skills</a>
-    <a href="#contact"    onclick="closeDrawer()">Contact</a>
-  </div>
-</div>
+</nav>
 
 <div class="wrap">
 
-  <!-- ── HERO ── -->
-  <section class="hero">
-    <div class="avail-badge"><span class="avail-dot"></span>Available for new opportunities</div>
-    <span class="hero-eyebrow">B2B Growth Marketer · Remote · Noida, India</span>
-    <h1>Building organic growth<br>for <span class="hl">technical audiences.</span></h1>
-    <p class="hero-sub">I help engineering and industrial B2B brands grow through content-led demand generation — organic funnels, SEO/AEO, and paid acquisition that actually converts. 3+ years turning niche audiences into real pipeline.</p>
-    <div class="hero-cta">
-      <a href="mailto:vrai7667@gmail.com" class="btn btn-dark">Get in touch →</a>
-      <a href="https://www.linkedin.com/company/chemklub1/?viewAsMember=true" target="_blank" class="btn btn-ghost">LinkedIn</a>
-      <a href="https://www.instagram.com/chemklub_india/" target="_blank" class="btn btn-ghost">Instagram</a>
-      <a href="https://www.youtube.com/@ChemklubIndia" target="_blank" class="btn btn-ghost">YouTube</a>
-      <a href="https://www.threads.net/@chemklub_india" target="_blank" class="btn btn-ghost">Threads</a>
-    </div>
-  </section>
+<!-- HERO -->
 
-  <!-- ── NUMBERS ── -->
-  <div class="numbers-grid" id="nums">
-    <div class="num-item reveal d1">
-      <div class="num-val" data-target="2500" data-suffix="+">2,500+</div>
-      <div class="num-label">Leads per month</div>
-    </div>
-    <div class="num-item reveal d2">
-      <div class="num-val" data-target="1500" data-suffix="+">1,500+</div>
-      <div class="num-label">Webinar leads / mo</div>
-    </div>
-    <div class="num-item reveal d3">
-      <div class="num-val" data-target="100" data-suffix="K+">100K+</div>
-      <div class="num-label">Instagram followers</div>
-    </div>
-    <div class="num-item reveal d4">
-      <div class="num-val" data-target="33" data-suffix="K+">33K+</div>
-      <div class="num-label">LinkedIn followers</div>
-    </div>
+<section class="hero">
+
+  <div class="badge">
+    <span class="dot"></span>
+    Available for opportunities
   </div>
 
-  <!-- ── ABOUT ── -->
-  <section class="sec" id="about">
-    <p class="sec-label reveal">About Me</p>
-    <div class="about-grid">
-      <div class="about-text reveal d1">
-        <p>I'm a growth-focused B2B marketer specialising in technical and industrial audiences — specifically engineers, process safety professionals, and chemical engineering communities.</p>
-        <p>Over 3 years at ChemKlub India, I built a full demand generation system from the ground up — no templates, no playbooks. I figured out what content resonates with engineers and scaled it across every major platform.</p>
-        <p>My edge is the combination of marketing fundamentals and deep domain knowledge in chemical engineering software (Aspen Plus, HYSYS) and process safety — making me rare in B2B marketing for technical sectors.</p>
-        <p><strong>While my experience is rooted in ChemKlub, the systems I built — organic funnels, SEO-led content, and webinar programmes — apply directly to any B2B technical brand looking to scale.</strong></p>
-      </div>
-      <div class="about-cards">
-        <div class="about-card reveal d2">
-          <div class="about-card-icon">🎯</div>
-          <div>
-            <div class="about-card-title">Niche Specialist</div>
-            <div class="about-card-sub">Engineering & industrial B2B — I speak the audience's language</div>
-          </div>
-        </div>
-        <div class="about-card reveal d3">
-          <div class="about-card-icon">📈</div>
-          <div>
-            <div class="about-card-title">Organic-First Mindset</div>
-            <div class="about-card-sub">2,500+ leads/mo with zero paid budget — proof the system works</div>
-          </div>
-        </div>
-        <div class="about-card reveal d4">
-          <div class="about-card-icon">🔁</div>
-          <div>
-            <div class="about-card-title">Full-Funnel Ownership</div>
-            <div class="about-card-sub">TOFU to BOFU — I build and operate the whole machine</div>
-          </div>
-        </div>
-        <div class="about-card reveal d5">
-          <div class="about-card-icon">🌍</div>
-          <div>
-            <div class="about-card-title">Global Audience</div>
-            <div class="about-card-sub">Built a following of engineers across 50+ countries remotely</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <div class="hero-tag">
+    Open for Remote / Hybrid / Office Roles
+  </div>
 
-  <!-- ── SERVICES ── -->
-  <section class="sec" id="services">
-    <p class="sec-label reveal">What I Do</p>
-    <div class="services-grid">
-      <div class="service-card reveal d1">
-        <div class="service-icon">⚡</div>
-        <div class="service-title">Demand Generation</div>
-        <div class="service-desc">Full-funnel strategy that attracts, nurtures, and converts — organic and paid working together as a system.</div>
-      </div>
-      <div class="service-card reveal d2">
-        <div class="service-icon">✍️</div>
-        <div class="service-title">Technical Content Marketing</div>
-        <div class="service-desc">Long-form content, social posts, and webinars built for engineering audiences who can spot surface-level writing instantly.</div>
-      </div>
-      <div class="service-card reveal d3">
-        <div class="service-icon">🔍</div>
-        <div class="service-title">SEO / AEO</div>
-        <div class="service-desc">Search and answer engine optimisation for highly specific technical queries — the kind competitors won't even attempt.</div>
-      </div>
-      <div class="service-card reveal d4">
-        <div class="service-icon">📣</div>
-        <div class="service-title">Paid Advertising</div>
-        <div class="service-desc">Google Ads and Meta Ads campaigns for retargeting and lead acquisition — built to complement, not replace, organic growth.</div>
-      </div>
-      <div class="service-card reveal d5">
-        <div class="service-icon">📊</div>
-        <div class="service-title">Social Media Growth</div>
-        <div class="service-desc">Platform-specific organic growth strategy across LinkedIn, Instagram, YouTube, and Threads for B2B technical brands.</div>
-      </div>
-      <div class="service-card reveal d5">
-        <div class="service-icon">🎙️</div>
-        <div class="service-title">Webinar & Lead Funnels</div>
-        <div class="service-desc">End-to-end webinar marketing generating 1,500+ qualified leads per month — 100% organic, zero paid spend.</div>
-      </div>
-    </div>
-  </section>
+  <h1>
+    Building organic growth for
+    <span>technical audiences.</span>
+  </h1>
 
-  <!-- ── RESULTS ── -->
-  <section class="sec" id="results">
-    <p class="sec-label reveal">Key Results</p>
-    <div class="results-grid">
-      <div class="result-card reveal d1">
-        <div class="result-num">200x</div>
-        <div class="result-label">Instagram growth<br>(500 → 100K+)</div>
-      </div>
-      <div class="result-card reveal d2">
-        <div class="result-num">16x</div>
-        <div class="result-label">LinkedIn growth<br>(2K → 33K+)</div>
-      </div>
-      <div class="result-card reveal d3">
-        <div class="result-num">70x</div>
-        <div class="result-label">Threads growth<br>(100 → 7K+)</div>
-      </div>
-      <div class="result-card reveal d4">
-        <div class="result-num">₹50K</div>
-        <div class="result-label">Max Meta Ads budget<br>handled (INR)</div>
-      </div>
-      <div class="result-card reveal d5">
-        <div class="result-num">1,500+</div>
-        <div class="result-label">Webinar leads per month<br>— zero paid spend</div>
-      </div>
-      <div class="result-card reveal d5">
-        <div class="result-num">2,500+</div>
-        <div class="result-label">Inbound leads<br>generated monthly</div>
-      </div>
-    </div>
-  </section>
+  <p>
+    I help engineering and industrial B2B brands grow through content-led demand generation, SEO/AEO, webinar funnels, and organic growth systems that generate real inbound pipeline.
+  </p>
 
-  <!-- ── PLATFORM GROWTH ── -->
-  <section class="sec" id="work-samples">
-    <p class="sec-label reveal">Platform Growth (Work Samples)</p>
-    <div class="metrics-list">
-      <a href="https://www.instagram.com/chemklub_india/" target="_blank" class="metric-row reveal d1">
-        <span class="metric-platform">Instagram ↗</span>
-        <div class="bar-wrap"><div class="bar" data-width="100"></div></div>
-        <span class="metric-val">500 → 100K+</span>
+  <div class="hero-buttons">
+
+    <a href="mailto:vrai7667@gmail.com" class="btn btn-dark">
+      Get in touch →
+    </a>
+
+    <a href="https://www.linkedin.com/company/chemklub1/"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="btn btn-light">
+      LinkedIn
+    </a>
+
+    <a href="https://www.instagram.com/chemklub_india/"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="btn btn-light">
+      Instagram
+    </a>
+
+    <a href="https://www.youtube.com/@ChemklubIndia"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="btn btn-light">
+      YouTube
+    </a>
+
+    <a href="https://www.threads.com/@chemklub_india"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="btn btn-light">
+      Threads
+    </a>
+
+  </div>
+
+</section>
+
+<!-- NUMBERS -->
+
+<section class="numbers reveal">
+
+  <div class="number-card">
+    <div class="number">2,500+</div>
+    <div class="number-label">Inbound leads / month</div>
+  </div>
+
+  <div class="number-card">
+    <div class="number">1,500+</div>
+    <div class="number-label">Webinar leads / month</div>
+  </div>
+
+  <div class="number-card">
+    <div class="number">100K+</div>
+    <div class="number-label">Instagram followers</div>
+  </div>
+
+  <div class="number-card">
+    <div class="number">33K+</div>
+    <div class="number-label">LinkedIn followers</div>
+  </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="section reveal" id="about">
+
+  <div class="label">About Me</div>
+
+  <div class="about-grid">
+
+    <div class="about-text">
+
+      <p>
+        I'm a growth-focused B2B marketer specialising in technical and industrial audiences — especially engineers, process safety professionals, and chemical engineering communities.
+      </p>
+
+      <p>
+        Over 3 years at ChemKlub India, I built a complete demand generation system from scratch across LinkedIn, Instagram, Threads, webinars, SEO, and technical content marketing.
+      </p>
+
+      <p>
+        My edge is combining marketing execution with domain understanding in Aspen Plus, HYSYS, process safety, and engineering workflows — creating content that technical audiences genuinely trust.
+      </p>
+
+    </div>
+
+    <div class="about-cards">
+
+      <div class="about-card">
+        <h4>🎯 Niche Specialist</h4>
+        <p>Engineering and industrial B2B marketing focused on technical buyers.</p>
+      </div>
+
+      <div class="about-card">
+        <h4>📈 Organic Growth</h4>
+        <p>Built scalable inbound systems generating consistent monthly leads.</p>
+      </div>
+
+      <div class="about-card">
+        <h4>🌍 Global Audience</h4>
+        <p>Grew technical communities across 50+ countries remotely.</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section class="section reveal" id="services">
+
+  <div class="label">What I Do</div>
+
+  <div class="services-grid">
+
+    <div class="service">
+      <i class="fa-solid fa-bullseye"></i>
+      <h4>Demand Generation</h4>
+      <p>Organic and paid funnel systems designed for technical B2B growth.</p>
+    </div>
+
+    <div class="service">
+      <i class="fa-solid fa-pen"></i>
+      <h4>Technical Content</h4>
+      <p>Engineering-focused content built for trust and conversion.</p>
+    </div>
+
+    <div class="service">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <h4>SEO / AEO</h4>
+      <p>High-intent search visibility for technical and industrial queries.</p>
+    </div>
+
+    <div class="service">
+      <i class="fa-solid fa-chart-line"></i>
+      <h4>Social Media Growth</h4>
+      <p>Platform-specific growth strategy for B2B brands.</p>
+    </div>
+
+    <div class="service">
+      <i class="fa-solid fa-video"></i>
+      <h4>Webinar Funnels</h4>
+      <p>End-to-end webinar campaigns generating qualified inbound leads.</p>
+    </div>
+
+    <div class="service">
+      <i class="fa-solid fa-bullhorn"></i>
+      <h4>Paid Advertising</h4>
+      <p>Google Ads and Meta Ads campaigns focused on conversion.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- RESULTS -->
+
+<section class="section reveal" id="results">
+
+  <div class="label">Key Results</div>
+
+  <div class="results-grid">
+
+    <div class="result">
+      <h3>200x</h3>
+      <p>Instagram growth (500 → 100K+)</p>
+    </div>
+
+    <div class="result">
+      <h3>16x</h3>
+      <p>LinkedIn growth (2K → 33K+)</p>
+    </div>
+
+    <div class="result">
+      <h3>70x</h3>
+      <p>Threads growth (100 → 7K+)</p>
+    </div>
+
+    <div class="result">
+      <h3>₹50K</h3>
+      <p>Meta Ads budget handled</p>
+    </div>
+
+    <div class="result">
+      <h3>1,500+</h3>
+      <p>Webinar leads/month</p>
+    </div>
+
+    <div class="result">
+      <h3>2,500+</h3>
+      <p>Inbound leads/month</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- PLATFORM -->
+
+<section class="section reveal">
+
+  <div class="label">Platform Growth</div>
+
+  <div class="platforms">
+
+    <a href="https://www.instagram.com/chemklub_india/"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="platform">
+
+      <div class="platform-top">
+        <span>Instagram</span>
+        <span>500 → 100K+</span>
+      </div>
+
+      <div class="bar-wrap">
+        <div class="bar" data-width="100"></div>
+      </div>
+
+    </a>
+
+    <a href="https://www.linkedin.com/company/chemklub1/"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="platform">
+
+      <div class="platform-top">
+        <span>LinkedIn</span>
+        <span>2K → 33K+</span>
+      </div>
+
+      <div class="bar-wrap">
+        <div class="bar" data-width="33"></div>
+      </div>
+
+    </a>
+
+    <a href="https://www.threads.com/@chemklub_india"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="platform">
+
+      <div class="platform-top">
+        <span>Threads</span>
+        <span>100 → 7K+</span>
+      </div>
+
+      <div class="bar-wrap">
+        <div class="bar" data-width="7"></div>
+      </div>
+
+    </a>
+
+    <a href="https://www.youtube.com/@ChemklubIndia"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="platform">
+
+      <div class="platform-top">
+        <span>YouTube</span>
+        <span>100 → 2.5K+</span>
+      </div>
+
+      <div class="bar-wrap">
+        <div class="bar" data-width="3"></div>
+      </div>
+
+    </a>
+
+  </div>
+
+</section>
+
+<!-- EXPERIENCE -->
+
+<section class="section reveal" id="experience">
+
+  <div class="label">Experience</div>
+
+  <div class="timeline">
+
+    <div class="timeline-item">
+
+      <small>May 2023 — Present</small>
+
+      <h3>Marketing Executive</h3>
+
+      <p>ChemKlub India Pvt Ltd · Remote</p>
+
+      <ul>
+        <li>Built multi-platform organic growth systems targeting engineering audiences globally.</li>
+        <li>Generated 2,500+ inbound leads monthly through organic marketing.</li>
+        <li>Built webinar funnels producing 1,500+ qualified leads/month.</li>
+        <li>Managed Google Ads and Meta Ads campaigns for retargeting and lead generation.</li>
+        <li>Created technical content for Aspen Plus, HYSYS, and process safety topics.</li>
+        <li>Implemented SEO/AEO strategies targeting technical search intent.</li>
+      </ul>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="section reveal" id="contact">
+
+  <div class="contact-box">
+
+    <h2>Let’s build something together.</h2>
+
+    <p>
+      Open for Remote / Hybrid / Office Roles, consulting, and collaborations.
+    </p>
+
+    <div class="contact-links">
+
+      <a href="mailto:vrai7667@gmail.com">
+        ✉ Email Me
       </a>
-      <a href="https://www.linkedin.com/company/chemklub1/" target="_blank" class="metric-row reveal d2">
-        <span class="metric-platform">LinkedIn ↗</span>
-        <div class="bar-wrap"><div class="bar" data-width="33"></div></div>
-        <span class="metric-val">2K → 33K+</span>
+
+      <a href="tel:9971904537">
+        📞 Call Me
       </a>
-      <a href="https://www.threads.net/@chemklub_india" target="_blank" class="metric-row reveal d3">
-        <span class="metric-platform">Threads ↗</span>
-        <div class="bar-wrap"><div class="bar" data-width="7"></div></div>
-        <span class="metric-val">100 → 7K+</span>
-      </a>
-      <a href="https://www.youtube.com/@ChemklubIndia" target="_blank" class="metric-row reveal d4">
-        <span class="metric-platform">YouTube ↗</span>
-        <div class="bar-wrap"><div class="bar" data-width="3"></div></div>
-        <span class="metric-val">100 → 2.5K+</span>
-      </a>
+
     </div>
-  </section>
 
-  <!-- ── EXPERIENCE ── -->
-  <section class="sec" id="experience">
-    <p class="sec-label reveal">Experience</p>
-    <div class="timeline">
-      <div class="tl-item reveal">
-        <div class="tl-left">
-          <div class="tl-period">May 2023<br>Present</div>
-        </div>
-        <div class="tl-dot-line"></div>
-        <div class="tl-right">
-          <div class="tl-role">Marketing Executive</div>
-          <div class="tl-company">ChemKlub India Pvt Ltd · Remote</div>
-          <ul class="tl-list">
-            <li>Built a multi-platform organic growth engine from scratch — Instagram, LinkedIn, Threads, YouTube — targeting engineers globally. Grew Instagram from 500 to 100K+ followers.</li>
-            <li>Designed and owned the complete demand generation funnel — TOFU to BOFU — producing 2,500+ inbound leads per month with zero paid budget for acquisition.</li>
-            <li>Built a webinar marketing programme generating 1,500+ qualified leads per month entirely through organic promotion.</li>
-            <li>Managed Google Ads and Meta Ads campaigns for retargeting and paid acquisition alongside organic channels.</li>
-            <li>Optimised landing pages and conversion funnels, improving lead-to-customer conversion rates across campaigns.</li>
-            <li>Produced technical content for Aspen Plus, HYSYS, and process safety topics — content that required genuine domain knowledge to earn trust with a specialist engineering audience.</li>
-            <li>Applied SEO and AEO strategies to capture high-intent search traffic from engineers looking for process simulation and safety training resources.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+  </div>
 
-  <!-- ── TOOLS ── -->
-  <section class="sec">
-    <p class="sec-label reveal">Tools & Stack</p>
-    <div class="tools-grid">
-      <div class="tool-item reveal d1"><div class="tool-icon"><i class="fa-brands fa-google"></i></div><div class="tool-name">Google Ads</div></div>
-      <div class="tool-item reveal d1"><div class="tool-icon"><i class="fa-brands fa-meta"></i></div><div class="tool-name">Meta Ads</div></div>
-      <div class="tool-item reveal d2"><div class="tool-icon"><i class="fa-solid fa-chart-line"></i></div><div class="tool-name">Google Analytics</div></div>
-      <div class="tool-item reveal d2"><div class="tool-icon"><i class="fa-brands fa-linkedin"></i></div><div class="tool-name">LinkedIn Ads</div></div>
-      <div class="tool-item reveal d3"><div class="tool-icon"><i class="fa-solid fa-envelope-open-text"></i></div><div class="tool-name">Email Marketing</div></div>
-      <div class="tool-item reveal d3"><div class="tool-icon"><i class="fa-brands fa-youtube"></i></div><div class="tool-name">YouTube Studio</div></div>
-      <div class="tool-item reveal d4"><div class="tool-icon"><i class="fa-solid fa-video"></i></div><div class="tool-name">Webinar Tools</div></div>
-      <div class="tool-item reveal d4"><div class="tool-icon"><i class="fa-solid fa-mobile-screen"></i></div><div class="tool-name">Meta Business</div></div>
-      <div class="tool-item reveal d5"><div class="tool-icon"><i class="fa-solid fa-palette"></i></div><div class="tool-name">Canva</div></div>
-      <div class="tool-item reveal d5"><div class="tool-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div><div class="tool-name">Adobe Express</div></div>
-      <div class="tool-item reveal d5"><div class="tool-icon"><i class="fa-solid fa-scissors"></i></div><div class="tool-name">CapCut</div></div>
-      <div class="tool-item reveal d5"><div class="tool-icon"><i class="fa-solid fa-film"></i></div><div class="tool-name">DaVinci Resolve</div></div>
-      <div class="tool-item reveal d5"><div class="tool-icon"><i class="fa-brands fa-wordpress"></i></div><div class="tool-name">WordPress Blogs</div></div>
-      <div class="tool-item reveal d5"><div class="tool-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div><div class="tool-name">SEO Tools</div></div>
-    </div>
-  </section>
+</section>
 
-  <!-- ── SKILLS ── -->
-  <section class="sec" id="skills">
-    <p class="sec-label reveal">Skills</p>
-    <div class="skills-list">
-      <div class="skill-row reveal d1">
-        <span class="skill-cat">Demand Gen</span>
-        <div class="tags">
-          <span class="tag">Growth Marketing</span>
-          <span class="tag">Lead Generation</span>
-          <span class="tag">Inbound Marketing</span>
-          <span class="tag">Full-Funnel Strategy</span>
-          <span class="tag">Conversion Rate Optimisation</span>
-        </div>
-      </div>
-      <div class="skill-row reveal d2">
-        <span class="skill-cat">Paid & SEO</span>
-        <div class="tags">
-          <span class="tag">Google Ads</span>
-          <span class="tag">Meta Ads</span>
-          <span class="tag">SEO</span>
-          <span class="tag">AEO</span>
-          <span class="tag">Retargeting</span>
-          <span class="tag">CRO</span>
-          <span class="tag">Funnel Analysis</span>
-        </div>
-      </div>
-      <div class="skill-row reveal d3">
-        <span class="skill-cat">Content</span>
-        <div class="tags">
-          <span class="tag">B2B Content Strategy</span>
-          <span class="tag">LinkedIn Marketing</span>
-          <span class="tag">Instagram Growth</span>
-          <span class="tag">Technical Writing</span>
-          <span class="tag">Webinar Marketing</span>
-        </div>
-      </div>
-      <div class="skill-row reveal d4">
-        <span class="skill-cat">Industry</span>
-        <div class="tags">
-          <span class="tag">Aspen Plus</span>
-          <span class="tag">HYSYS</span>
-          <span class="tag">Process Safety</span>
-          <span class="tag">Chemical Engineering</span>
-          <span class="tag">Marketing Analytics</span>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- FOOTER -->
 
-  <!-- ── OPEN TO ── -->
-  <section class="sec">
-    <p class="sec-label reveal">Open To</p>
-    <div class="offer-strip reveal">
-      <div>
-        <div class="offer-title">Full-time remote roles & consulting engagements</div>
-        <div class="offer-sub">B2B marketing, demand generation, content strategy, and growth for technical or industrial brands — anywhere in the world.</div>
-      </div>
-      <a href="mailto:vrai7667@gmail.com" class="btn btn-dark">Let's talk →</a>
-    </div>
-  </section>
+<footer>
 
-  <!-- ── CONTACT ── -->
-  <section class="sec" id="contact">
-    <p class="sec-label reveal">Contact</p>
-    <div class="contact-box reveal">
-      <div class="contact-top">
-        <div>
-          <h2>Let's build something together.</h2>
-          <p>Open to full-time remote roles, consulting, and collaborations.</p>
-        </div>
-        <a href="mailto:vrai7667@gmail.com" class="btn btn-accent">Email me →</a>
-      </div>
-      <div class="contact-links-grid">
-        <a href="mailto:vrai7667@gmail.com" class="c-link">
-          <span>✉ Email</span><span class="c-link-arrow">↗</span>
-        </a>
-        <a href="tel:+919971904537" class="c-link">
-          <span>📞 Phone</span><span class="c-link-arrow">↗</span>
-        </a>
-      </div>
-      
-    </div>
-  </section>
+  <span>© 2026 Vivek Ray</span>
 
-  <!-- ── FOOTER ── -->
-  <footer class="reveal">
-    <span>© 2026 Vivek Ray</span>
-    <span>Noida, India · Available Remotely</span>
-  </footer>
+  <span>Open for Remote / Hybrid / Office Roles</span>
 
-</div><!-- /wrap -->
+</footer>
+
+</div>
 
 <script>
-  /* ── Nav scroll shadow ── */
-  const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 8);
-  }, { passive: true });
 
-  /* ── Hamburger ── */
-  const ham = document.getElementById('ham');
-  const drawer = document.getElementById('drawer');
-  ham.addEventListener('click', () => {
-    ham.classList.toggle('open');
-    drawer.classList.toggle('open');
-  });
-  function closeDrawer() {
-    ham.classList.remove('open');
-    drawer.classList.remove('open');
+/* NAV SCROLL */
+
+const nav = document.getElementById('nav');
+
+window.addEventListener('scroll', () => {
+
+  if(window.scrollY > 10){
+    nav.classList.add('scrolled');
+  }else{
+    nav.classList.remove('scrolled');
   }
 
-  /* ── Scroll reveal + bar + countup ── */
-  let counted = new Set();
+});
 
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      const el = entry.target;
-      el.classList.add('in');
+/* REVEAL ANIMATION */
 
-      /* animate bar */
-      const bar = el.querySelector?.('.bar');
-      if (bar) setTimeout(() => bar.style.width = bar.dataset.width + '%', 60);
+const reveals = document.querySelectorAll('.reveal');
 
-      /* count-up */
-      el.querySelectorAll?.('[data-target]').forEach(numEl => {
-        if (!counted.has(numEl)) {
-          counted.add(numEl);
-          countUp(numEl);
-        }
+const observer = new IntersectionObserver((entries)=>{
+
+  entries.forEach(entry=>{
+
+    if(entry.isIntersecting){
+
+      entry.target.classList.add('active');
+
+      /* animate bars */
+
+      const bars = entry.target.querySelectorAll('.bar');
+
+      bars.forEach(bar=>{
+
+        bar.style.width = bar.dataset.width + '%';
+
       });
-      /* also handle if the .num-item itself is the reveal */
-      if (el.dataset.target && !counted.has(el)) {
-        counted.add(el); countUp(el);
-      }
 
-      io.unobserve(el);
-    });
-  }, { threshold: 0.12 });
-
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-  /* ── Count-up ── */
-  function countUp(el) {
-    const target = parseInt(el.dataset.target, 10);
-    const suffix = el.dataset.suffix || '';
-    const dur    = 900;
-    const start  = performance.now();
-    function tick(now) {
-      const p = Math.min((now - start) / dur, 1);
-      const e = 1 - Math.pow(1 - p, 3);
-      el.textContent = Math.round(e * target).toLocaleString() + suffix;
-      if (p < 1) requestAnimationFrame(tick);
     }
-    requestAnimationFrame(tick);
-  }
+
+  });
+
+},{
+  threshold:0.15
+});
+
+reveals.forEach(reveal=>{
+  observer.observe(reveal);
+});
 
 </script>
+
 </body>
 </html>
